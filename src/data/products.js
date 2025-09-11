@@ -6,7 +6,7 @@ const products = [
     price: 29.99,
     oldPrice: 39.99,
     short: 'Dose quotidienne de soutien naturel pour commencer votre routine.',
-    image: require('../assets/images/product-1.jpg'),
+    image: require('../assets/images/Pcard1.png'),
     rating: 4.6,
     reviews: 128
   },
@@ -17,7 +17,7 @@ const products = [
     price: 49.99,
     oldPrice: 59.99,
     short: 'Formulation optimisée pour un usage quotidien.',
-    image: require('../assets/images/product-2.jpg'),
+    image: require('../assets/images/Cura-Slim-Website-Tube-1.png'),
     rating: 4.7,
     reviews: 210
   },
@@ -27,7 +27,7 @@ const products = [
     brand: 'CuraSlim',
     price: 14.99,
     short: 'Infusion detox douce, à boire le matin.',
-    image: require('../assets/images/product-1.jpg'),
+    image: require('../assets/images/Cura-Slim-Website-Tube-1.png'),
     rating: 4.3,
     reviews: 42
   }

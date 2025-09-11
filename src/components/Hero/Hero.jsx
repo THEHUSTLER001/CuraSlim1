@@ -37,11 +37,12 @@ export default function Hero() {
               3 Produits D'amincissement
             </p>
             <h1 id="hero-heading" className="hero__title">
-              <span style={{ color: '#8E2CA6' }}>Pack</span> <span style={{ color: '#FFFFFF' }}>Minceur</span>
+              <span style={{ color: '#8E2CA6' }}>Pack</span> <br />
+              <span style={{ color: '#FFFFFF' }}>Minceur</span>
             </h1>
             <div className="hero__actions">
-              <button className="btn btn--outline" type="button" aria-label="Discover">Discover</button>
-              <button className="btn btn--primary" type="button" aria-label="Buy now">Buy</button>
+              <button className="btn btn--outline" type="button" aria-label="Discover">DISCOVER NOW</button>
+              <button className="btn btn--primary" type="button" aria-label="Buy now">BUY NOW</button>
             </div>
           </div>
         </div>

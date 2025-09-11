@@ -1,5 +1,5 @@
 .testimonial-carousel {
-  background-color: #D4F0C6; /* Light green background */
+  background-color: #779a1a; /* Light green background */
   padding: 40px 20px;
   text-align: left;
   position: relative;
@@ -7,7 +7,6 @@
   font-family: Arial, sans-serif;
   color: #333;
   margin: 0 auto;
-  border-radius: 8px;
 }
 
 .testimonial__content {

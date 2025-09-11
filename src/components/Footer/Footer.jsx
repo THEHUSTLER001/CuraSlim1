@@ -1,5 +1,5 @@
 import React from "react";
-import { Truck, Gift, Shield, Headphones, Facebook, Twitter, Instagram, RotateCcw, RefreshCw } from "lucide-react";
+import { Truck, Gift, Shield, Headphones, Facebook, Twitter, Instagram,  } from "lucide-react";
 import "./Footer.css";
 
 const Footer = () => {
