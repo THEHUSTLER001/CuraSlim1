@@ -1,0 +1,58 @@
+/* ProductList: responsive grid of ProductCard components */
+
+.product-list {
+  padding: 48px 0;
+  background: #fbfbfb;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.product-list__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.product-list__title {
+  font-size: 24px;
+  color: #161616;
+  margin: 0;
+}
+
+.product-list__subtitle {
+  color: #777;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Grid */
+.product-list__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(1, 1fr);
+  padding-inline: 70px;
+}
+
+/* tablet */
+@media (min-width: 640px) {
+  .product-list__grid { grid-template-columns: repeat(2, 1fr); gap: 18px; padding-inline: 70px; }
+}
+
+/* desktop */
+@media (min-width: 1000px) {
+  .product-list__grid { grid-template-columns: repeat(3, 1fr); gap: 22px; padding-inline: 200px; }
+}
+
+/* wide screens */
+@media (min-width: 1400px) {
+  .product-list__grid { grid-template-columns: repeat(3, 1fr); gap: 26px; padding-inline: 200px; }
+}

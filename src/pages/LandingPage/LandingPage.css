@@ -1,0 +1,12 @@
+.landing-main {
+  flex: 1;
+}
+
+.placeholder-section {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--muted);
+}
+.container h2 {
+  margin-bottom: 12px;
+}

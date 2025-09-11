@@ -1,0 +1,63 @@
+/* Posters: no border-radius, bigger posters */
+
+.posters {
+  padding: 48px 0;
+  background: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.posters__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* poster card - now squared edges (no radius) and taller */
+.poster {
+  overflow: hidden;
+  background: #fafafa;
+  border: 1px solid rgba(18,18,18,0.04);
+  box-shadow: 0 12px 30px rgba(17,17,17,0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px; /* bigger */
+}
+
+.poster__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* placeholder */
+.poster__placeholder {
+  width: 100%;
+  height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#999;
+  font-weight:700;
+}
+
+/* tablet/desktop three columns */
+@media (min-width: 700px) {
+  .posters__inner {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .poster {
+    min-height: 420px;
+  }
+}

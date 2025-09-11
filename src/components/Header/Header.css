@@ -1,0 +1,202 @@
+/* Header variables */
+.site-header {
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 50;
+}
+
+/* Shared container */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* ---------- Mobile top bar (logo left + burger right) ---------- */
+.site-header__mobilebar {
+  display: block;
+  padding: 12px 0;
+}
+
+.site-header__mobile-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo sizes */
+.logo__img {
+  display: block;
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo__img--mobile {
+  height: 44px;
+}
+
+/* Hamburger button */
+.nav-toggle {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-toggle:focus {
+  outline: 2px solid rgba(142,44,166,0.18);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.hamburger {
+  display: inline-block;
+  width: 26px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger .bar {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #222;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: transform .25s cubic-bezier(.2,.9,.2,1), opacity .25s ease;
+}
+.hamburger .bar:nth-child(1) { top: 0; }
+.hamburger .bar:nth-child(2) { top: 8px; }
+.hamburger .bar:nth-child(3) { top: 16px; }
+
+/* open state - animate to X */
+.nav-toggle.is-open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.is-open .bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------- Mobile slide-down menu ---------- */
+/* We animate max-height for smoothness + fade + translate */
+.mobile-nav {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height .36s cubic-bezier(.2,.9,.2,1), opacity .28s ease;
+  opacity: 0;
+  background: var(--white);
+  border-top: 1px solid #f0f0f0;
+  width: 100%;
+  position: relative;
+}
+
+/* When open give plenty of max-height to allow content to show; using a large value is safe */
+.mobile-nav--open {
+  max-height: 420px;
+  opacity: 1;
+}
+
+/* Mobile list */
+.mobile-nav__list {
+  list-style: none;
+  padding: 16px 20px 22px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav__link {
+  display: block;
+  padding: 12px 10px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background .12s ease, transform .12s ease;
+}
+
+.mobile-nav__link:hover, .mobile-nav__link:focus {
+  background: #faf6ff;
+  transform: translateX(6px);
+}
+
+/* ---------- Desktop layout (centered logo with nav underneath) ---------- */
+.site-header__desktop {
+  display: none;
+  padding: 36px 0 18px;
+  text-align: center;
+}
+
+.site-header__inner--desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* larger logo for desktop */
+.logo__img--desktop {
+  height: 96px;
+}
+
+.main-nav--desktop {
+  width: 100%;
+}
+
+/* horizontal list centered */
+.main-nav__list--desktop {
+  list-style: none;
+  display: inline-flex;
+  gap: 28px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-nav__link {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  padding: 6px 8px;
+  transition: color .12s ease, transform .12s ease;
+}
+.main-nav__link:hover, .main-nav__link:focus {
+  color: var(--purple-600);
+  transform: translateY(-3px);
+}
+
+/* ---------- Responsive breakpoints ---------- */
+@media (min-width: 900px) {
+  /* show desktop header, hide mobile top bar and mobile nav */
+  .site-header__mobilebar { display: none; }
+  .mobile-nav { display: none; }
+
+  .site-header__desktop { display: block; }
+}
+
+/* Accessibility: ensure focus styles for links inside nav */
+.main-nav__link:focus, .mobile-nav__link:focus {
+  outline: 2px solid rgba(142,44,166,0.18);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* small screens tweaks */
+@media (max-width: 420px) {
+  .logo__img--mobile { height: 40px; }
+  .hamburger { width: 22px; height: 16px; }
+}
