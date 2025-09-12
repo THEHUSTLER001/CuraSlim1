@@ -10,6 +10,7 @@ import ContactForm from '../../components/ContactForm/ContactForm.jsx';
 import Categories from '../../components/Categories/Categories.jsx';
 import ProductBenefit from '../../components/ProductBenefit/ProductBenefit.jsx';
 import './LandingPage.css';
+import WeightCalculator from '../../components/WeightCalculator/WeightCalculator.jsx';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -58,6 +59,9 @@ export default function LandingPage() {
         </div>
         <div className="section">
           <TestimonialCarousel />
+        </div>
+         <div className="section">
+<WeightCalculator/>
         </div>
         <div className="section">
           <Categories />

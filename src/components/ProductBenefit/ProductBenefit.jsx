@@ -40,8 +40,8 @@ const ProductBenefit = () => {
   return (
     <div className="benefit-container">
       <div className="header-section">
-        <h1 className="main-title">Pourquoi choisir Liderm?</h1>
-        <h2 className="main-title-ar">لماذا اختيار ليديرم؟</h2>
+        <h1 className="main-title">Pourquoi choisir CuraSlim?</h1>
+        <h2 className="main-title-ar">لماذا اختيار كورا سليم؟</h2>
       </div>
       <div className="benefit-grid">
         {products.map((product) => (
