@@ -2,7 +2,6 @@
 
 .product-list {
   padding: 48px 0;
-  background: #fbfbfb;
 }
 
 .container {
@@ -49,10 +48,10 @@
 
 /* desktop */
 @media (min-width: 1000px) {
-  .product-list__grid { grid-template-columns: repeat(3, 1fr); gap: 22px; padding-inline: 200px; }
+  .product-list__grid { grid-template-columns: repeat(3, 1fr); gap: 22px; padding-inline: 350px; }
 }
 
 /* wide screens */
 @media (min-width: 1400px) {
-  .product-list__grid { grid-template-columns: repeat(3, 1fr); gap: 26px; padding-inline: 200px; }
+  .product-list__grid { grid-template-columns: repeat(3, 1fr); gap: 26px; padding-inline: 350px; }
 }

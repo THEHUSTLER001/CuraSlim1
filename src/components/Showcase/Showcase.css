@@ -1,30 +1,26 @@
-/* Showcase: brand-squares appear to come out of the center image sides (desktop)
-   and from the top/bottom (mobile). Everything centered.
-*/
-
 .showcase-hero {
-  padding: 40px 16px;
+  padding: 20px 200px;
   background: #ffffff;
 }
 
-/* center grid items so the whole block looks centralized */
 .showcase-hero__container {
+  height: 300px;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 740px; /* title | big block */
+  grid-template-columns: 1fr 800px; /* title | big block */
   gap: 24px;
   align-items: center;
   box-sizing: border-box;
   justify-items: center;
 }
 
-/* Title centered */
 .showcase-hero__left {
   padding-right: 12px;
   justify-self: center;
   width: 100%;
 }
+
 .showcase-hero__title {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 36px;
@@ -35,27 +31,24 @@
   line-height: 1.02;
 }
 
-/* Outer block */
 .showcase-hero__block {
   padding: 10px;
   width: 100%;
   max-width: 740px;
   box-sizing: border-box;
-  overflow: visible; /* allow brand squares to protrude */
+  overflow: visible;
 }
 
-/* Inner layout: brand-square | visual | brand-square */
 .showcase-hero__block-inner {
   display: grid;
-  grid-template-columns: 140px 1fr 140px;
-  gap: 16px;
+  grid-template-columns: 190px 1fr 190px;
+  gap: 6px;
   align-items: center;
-  min-height: 360px; /* baseline visual height */
+  min-height: 360px;
   justify-items: center;
-  position: relative; /* used for mobile absolute positioning too */
+  position: relative;
 }
 
-/* Visual baseline */
 .showcase-hero__visual {
   position: relative;
   width: 100%;
@@ -64,28 +57,28 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
-  z-index: 10; /* base image z-index */
+  z-index: 10;
 }
+
 .showcase-hero__visual-bg {
   position: absolute;
   inset: 0;
   z-index: 8;
   border-radius: 4px;
 }
+
 .showcase-hero__visual-img {
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 520px;
+  max-width: 300px;
   height: 100%;
-  max-height: 520px;
+  max-height: 300px;
   object-fit: cover;
   margin-top: -6%;
   margin-bottom: -6%;
-  border-radius: 4px;
 }
 
-/* BRAND SQUARE: positioned UNDER the visual */
 .brand-square {
   display: flex;
   flex-direction: column;
@@ -93,27 +86,25 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 70%;            /* ~30% shorter than visual (desktop baseline) */
-  max-width: 140px;
+  height: 47%;
+  max-width: 190px;
   padding: 10px;
   box-sizing: border-box;
   background: #ffffff;
-  border: 3px solid #9b2fb0;
-  border-radius: 6px;
+  border: 3px solid #a60d98;
   box-shadow: 0 8px 20px rgba(17,17,17,0.03);
   min-height: 120px;
-  z-index: 5; /* BELOW the visual */
+  z-index: 5;
 }
 
-/* Slight nudge so brand-squares appear to come out of the image sides on desktop */
 .showcase-hero__block-inner > .brand-square:first-child {
-  transform: translateX(28%); /* moves right into the visual */
-}
-.showcase-hero__block-inner > .brand-square:last-child {
-  transform: translateX(-28%); /* moves left into the visual */
+  transform: translateX(18%);
 }
 
-/* Each logo inside the square */
+.showcase-hero__block-inner > .brand-square:last-child {
+  transform: translateX(-18%);
+}
+
 .brand-square__logo img {
   max-width: 110px;
   width: 100%;
@@ -122,87 +113,209 @@
   display: block;
 }
 
-/* Placeholder logo visual */
 .brand-square__placeholder {
   width: 110px;
   height: 46px;
   background: #fafafa;
   color: #222;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
   border-radius: 4px;
 }
 
-/* ------------------ Medium screens ------------------ */
-@media (max-width: 1200px) {
-  .showcase-hero__container { 
-    grid-template-columns: 1fr 560px; 
-    gap: 20px; 
+/* Synchronize animations with parent section visibility */
+.section:not(.visible) .showcase-hero__left,
+.section:not(.visible) .showcase-hero__block,
+.section:not(.visible) .showcase-hero__visual-img,
+.section:not(.visible) .brand-square {
+  opacity: 0;
+  animation: none !important;
+  transition: none !important;
+}
+
+.section:not(.visible) .showcase-hero__left {
+  transform: translateX(-100px);
+}
+
+.section:not(.visible) .showcase-hero__block {
+  transform: translateX(100px);
+}
+
+.section:not(.visible) .showcase-hero__visual-img {
+  opacity: 0;
+}
+
+.section:not(.visible) .brand-square:first-child {
+  transform: translateX(100%);
+}
+
+.section:not(.visible) .brand-square:last-child {
+  transform: translateX(-100%);
+}
+
+.section.visible .showcase-hero__left {
+  animation: slideFromLeft 1.2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.section.visible .showcase-hero__block {
+  animation: slideFromRight 1.2s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.section.visible .showcase-hero__visual-img {
+  animation: fadeIn 1.2s ease-in forwards;
+  animation-delay: 0.6s;
+}
+
+.section.visible .brand-square:first-child {
+  animation: emergeLeft 1.2s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.section.visible .brand-square:last-child {
+  animation: emergeRight 1.2s ease-out forwards;
+  animation-delay: 1.0s;
+}
+
+/* Keyframes for animations */
+@keyframes slideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
   }
-  .showcase-hero__title { 
-    font-size: 32px; 
-  }
-  .showcase-hero__block-inner { 
-    grid-template-columns: 120px 1fr 120px; 
-    min-height: 300px; 
-    gap: 14px; 
-  }
-  .brand-square { 
-    max-width: 120px; 
-    min-height: 100px; 
-    gap: 10px; 
-    padding: 8px; 
-  }
-  .showcase-hero__visual-img { 
-    max-width: 420px; 
-    max-height: 420px; 
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* ------------------ Small screens: image first, brand squares top/bottom overlapping ------------------ */
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes emergeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(18%);
+  }
+}
+
+@keyframes emergeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-18%);
+  }
+}
+
+@keyframes emergeTop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes emergeBottom {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1200px) {
+  .showcase-hero__container {
+    grid-template-columns: 1fr 560px;
+    gap: 20px;
+  }
+  .showcase-hero__title {
+    font-size: 32px;
+  }
+  .showcase-hero__block-inner {
+    grid-template-columns: 120px 1fr 120px;
+    min-height: 300px;
+    gap: 14px;
+  }
+  .brand-square {
+    max-width: 120px;
+    min-height: 100px;
+    gap: 10px;
+    padding: 8px;
+  }
+  .showcase-hero__visual-img {
+    max-width: 420px;
+    max-height: 420px;
+  }
+}
+
+/* Small screens: image first, brand squares top/bottom overlapping */
 @media (max-width: 900px) {
   .showcase-hero__container {
     grid-template-columns: 1fr;
     gap: 145px;
     justify-items: center;
   }
-
-  /* keep block centered and smaller */
-  .showcase-hero__block { 
-    order: 1; 
-    max-width: 94%; 
+  .showcase-hero__block {
+    order: 1;
+    max-width: 94%;
   }
-  .showcase-hero__left { 
-    order: 2; 
-    padding: 0; 
+  .showcase-hero__left {
+    order: 2;
+    padding: 0;
   }
-  .showcase-hero__title { 
-    font-size: 24px; 
+  .showcase-hero__title {
+    font-size: 24px;
   }
-
-  /* make block-inner a single column (stack) */
   .showcase-hero__block-inner {
-    display: block; /* use block so we can absolutely position brand squares relative to visual */
+    display: block;
     min-height: auto;
     padding: 6px;
   }
-
-  /* center visual and let it define the positioning space */
   .showcase-hero__visual {
     margin: 0 auto;
     min-height: 260px;
     z-index: 10;
   }
-  .showcase-hero__visual-img { 
-    max-width: 86%; 
-    margin-top: -4%; 
-    margin-bottom: -4%; 
-    max-height: 420px; 
+  .showcase-hero__visual-img {
+    max-width: 86%;
+    margin-top: -4%;
+    margin-bottom: -4%;
+    max-height: 420px;
   }
-
-  /* Brand squares become absolutely positioned over the visual */
   .brand-square {
     position: absolute;
     left: 50%;
@@ -217,104 +330,82 @@
     border-width: 2px;
     z-index: 5;
   }
-
-  /* top square (first) */
   .showcase-hero__block-inner > .brand-square:first-child {
-    top: -18%;  /* protrude above the visual */
+    top: -18%;
     transform: translate(-50%, 0);
+    animation: none !important;
   }
-
-  /* bottom square (second) */
   .showcase-hero__block-inner > .brand-square:last-child {
-    bottom: -18%; /* protrude below the visual */
+    bottom: -18%;
     transform: translate(-50%, 0);
+    animation: none !important;
   }
-
-  /* ensure the visual container has space for the absolute squares */
-  .showcase-hero__visual { 
-    position: relative; 
-    padding-top: 36px; 
-    padding-bottom: 36px; 
+  .section.visible .brand-square:first-child {
+    animation: emergeTop 1.2s ease-out forwards;
+    animation-delay: 0.8s;
   }
-
-  /* adjust logo sizes in row layout */
-  .brand-square__logo img { 
-    max-width: 84px; 
+  .section.visible .brand-square:last-child {
+    animation: emergeBottom 1.2s ease-out forwards;
+    animation-delay: 1.0s;
+  }
+  .showcase-hero__visual {
+    position: relative;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .brand-square__logo img {
+    max-width: 84px;
   }
 }
 
-/* ------------------ CRITICAL FIX: Very small phones (320px-420px) ------------------ */
+/* Very small phones (320px-420px) */
 @media (max-width: 420px) {
-  /* Section padding - increased bottom space for title */
-  .showcase-hero { 
-    padding: 70px 12px 48px; /* Top:32px | Sides:12px | Bottom:48px (critical for title visibility) */
+  .showcase-hero {
+    padding: 70px 12px 48px;
   }
-  
-  /* Title container - ensure full width and proper spacing */
   .showcase-hero__left {
     width: 100%;
     padding: 0 8px;
   }
-  
-  /* Title - larger bottom margin, optimized font size */
-  .showcase-hero__title { 
-    font-size: 22px; 
+  .showcase-hero__title {
+    font-size: 22px;
     line-height: 1.1;
-    margin: 0 0 16px; /* Increased from 6px to prevent title/image collision */
-    min-height: 48px; /* Prevents container collapse */
+    margin: 0 0 16px;
+    min-height: 48px;
   }
-  
-  /* Image block - reduced max-width for tighter screens */
-  .showcase-hero__block { 
-    max-width: 96%; 
-    padding: 8px; /* Reduced from 10px */
+  .showcase-hero__block {
+    max-width: 96%;
+    padding: 8px;
   }
-  
-  /* Visual container - added critical spacing for brand squares */
   .showcase-hero__visual {
-    min-height: 220px; /* Reduced for small screens */
-    padding-top: 28px; /* Reduced from 36px but still accommodates top square */
-    padding-bottom: 28px; /* Reduced from 36px but still accommodates bottom square */
+    min-height: 220px;
+    padding-top: 28px;
+    padding-bottom: 28px;
   }
-  
-  /* Brand squares - optimized for tiny screens */
   .brand-square {
-    width: 74%; /* Slightly wider to accommodate smaller logos */
+    width: 74%;
     max-width: 380px;
-    gap: 8px; /* Reduced spacing between logos */
-    padding: 6px; /* Reduced padding */
-    border-width: 1.5px; /* Thinner border */
+    gap: 8px;
+    padding: 6px;
+    border-width: 1.5px;
   }
-  
-  /* Top brand square - reduced protrusion to prevent overflow */
   .showcase-hero__block-inner > .brand-square:first-child {
-    top: -18%; /* Reduced from -22% to prevent top overflow */
+    top: -18%;
   }
-  
-  /* Bottom brand square - reduced protrusion to prevent title collision */
   .showcase-hero__block-inner > .brand-square:last-child {
-    bottom: -16%; /* Reduced from -22% to create buffer for title */
+    bottom: -16%;
   }
-  
-  /* Logo images - optimized sizing */
-  .brand-square__logo img { 
-    max-width: 68px; /* Reduced from 72px */
-    max-height: 32px; /* Added height constraint */
+  .brand-square__logo img {
+    max-width: 68px;
+    max-height: 32px;
   }
-  
-  /* Visual image - refined scaling */
-  .showcase-hero__visual-img { 
-    max-width: 94%; 
-    margin-top: -3%; 
-    margin-bottom: -3%; 
-    max-height: 380px; 
+  .showcase-hero__visual-img {
+    max-width: 94%;
+    margin-top: -3%;
+    margin-bottom: -3%;
+    max-height: 380px;
   }
-  
-  /* Container gap - critical spacing between image and title */
   .showcase-hero__container {
-    gap: 50px; /* Increased from 16px to prevent title/image collision */
+    gap: 50px;
   }
 }
-
-/* ------------------ REMOVED HOVER EFFECTS (as requested) ------------------ */
-/* Entire hover block removed - no hover effects at any screen size */

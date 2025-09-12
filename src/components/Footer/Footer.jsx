@@ -71,8 +71,7 @@ const Footer = () => {
         <div className="footer-section instagram-shop">
           <h3>INSTAGRAM SHOP</h3>
           <div className="instagram-placeholder">
-            <div>IMAGE</div>
-            <div>INSTAGRAM</div>
+            <img src="https://www.instagram.com/curaslim/p/DOMBbPKDU4l/" alt="post" />
           </div>
         </div>
       </div>
@@ -80,10 +79,6 @@ const Footer = () => {
       {/* Bottom Footer */}
       <div className="footer-bottom">
         <p>Copyright © 2025 NL Digital Agency All Rights Reserved.</p>
-        <div className="footer-payments">
-          <div>PayPal</div>
-          <div>VISA</div>
-        </div>
       </div>
     </footer>
   );

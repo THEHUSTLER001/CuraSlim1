@@ -31,60 +31,47 @@ const testimonials = [
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [direction, setDirection] = useState(0); // 1 = left, -1 = right
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDirection(1); // Always slide left (right-to-left)
-      setIsTransitioning(true);
-      
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-        setIsTransitioning(false);
-      }, 500); // Match this with your CSS transition duration
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 3000);
-    
+
     return () => clearInterval(interval);
   }, []);
 
   const handleDotClick = (index) => {
-    const currentIndexCopy = currentIndex;
-    const directionValue = index > currentIndexCopy ? 1 : -1;
-    
-    setDirection(directionValue);
-    setIsTransitioning(true);
-    
-    setTimeout(() => {
-      setCurrentIndex(index);
-      setIsTransitioning(false);
-    }, 500);
+    setCurrentIndex(index);
   };
 
   return (
     <section className="testimonial-carousel">
       <div className="testimonial__content-wrapper">
-        <div 
-          className={`testimonial__content ${isTransitioning ? 'transitioning' : ''} ${direction === 1 ? 'slide-left' : 'slide-right'}`}
-          style={{ transform: `translateX(${isTransitioning ? (direction === 1 ? '-100%' : '100%') : '0'})` }}
+        <div
+          className="testimonial__slider"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          <img
-            src={testimonials[currentIndex].image}
-            alt={testimonials[currentIndex].name}
-            className="testimonial__avatar"
-          />
-          <div className="testimonial__stars">
-            ★★★★★
-          </div>
-          <p className="testimonial__review">
-            {testimonials[currentIndex].review}
-          </p>
-          <p className="testimonial__name">
-            {testimonials[currentIndex].name}
-          </p>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="testimonial__content">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="testimonial__avatar"
+              />
+              <div className="testimonial__stars">
+                ★★★★★
+              </div>
+              <p className="testimonial__review">
+                {testimonial.review}
+              </p>
+              <p className="testimonial__name">
+                {testimonial.name}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-      
+
       <div className="testimonial__dots">
         {testimonials.map((_, index) => (
           <span

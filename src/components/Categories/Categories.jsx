@@ -1,6 +1,7 @@
 // src/components/Categories.jsx
 import React from 'react';
 import './Categories.css';
+
 import coupeFaim from '../../assets/images/Cat1.jpg'; // Assuming image names based on categories
 import creme from '../../assets/images/Cat2.jpg';
 import fatBurner from '../../assets/images/Cat3.jpg';
@@ -18,6 +19,7 @@ const Categories = () => {
               <span className="category-products">12 products</span>
             </div>
           </div>
+          <div className="reveal-cover"></div>
         </div>
         <div className="category-card">
           <img src={creme} alt="Crème" className="category-image" />
@@ -27,6 +29,7 @@ const Categories = () => {
               <span className="category-products">3 products</span>
             </div>
           </div>
+          <div className="reveal-cover"></div>
         </div>
         <div className="category-card">
           <img src={fatBurner} alt="Fat Burner" className="category-image" />
@@ -36,6 +39,7 @@ const Categories = () => {
               <span className="category-products">3 products</span>
             </div>
           </div>
+          <div className="reveal-cover"></div>
         </div>
       </div>
     </section>

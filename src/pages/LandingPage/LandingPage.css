@@ -10,3 +10,80 @@
 .container h2 {
   margin-bottom: 12px;
 }
+.landing-main {
+  overflow-x: hidden;
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slower staggered delays for parent sections */
+.section:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.section:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.section:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.section:nth-child(4) {
+  transition-delay: 0.8s;
+}
+.section:nth-child(5) {
+  transition-delay: 1.0s;
+}
+.section:nth-child(6) {
+  transition-delay: 1.2s;
+}
+.section:nth-child(7) {
+  transition-delay: 1.4s;
+}
+.section:nth-child(8) {
+  transition-delay: 1.6s;
+}
+
+/* Generic rule for child components with animations */
+.section:not(.visible) .animated-child {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: none !important;
+  transition: none !important;
+}
+
+.section.visible .animated-child {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+/* Staggered delays for child elements */
+.section.visible .animated-child:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.section.visible .animated-child:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.section.visible .animated-child:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.section.visible .animated-child:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

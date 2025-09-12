@@ -1,27 +1,70 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../../components/Header/Header.jsx';
 import Hero from '../../components/Hero/Hero.jsx';
 import Showcase from '../../components/Showcase/Showcase.jsx';
 import Posters from '../../components/Posters/Posters.jsx';
 import ProductList from '../../components/ProductList/ProductList.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
-import './LandingPage.css';
 import TestimonialCarousel from '../../components/Testimonial/Testimonial.jsx';
 import ContactForm from '../../components/ContactForm/ContactForm.jsx';
 import Categories from '../../components/Categories/Categories.jsx';
+import ProductBenefit from '../../components/ProductBenefit/ProductBenefit.jsx';
+import './LandingPage.css';
 
 export default function LandingPage() {
+  useEffect(() => {
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Stop observing once animated
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+      }
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <>
       <Header />
       <main className="landing-main">
-        <Hero />
-        <Showcase />
-        <Posters />
-        <ProductList />
-        <TestimonialCarousel/>
-        <Categories/>
-        <ContactForm/>
+        <div className="section">
+          <Hero />
+        </div>
+        <div className="section">
+          <Showcase />
+        </div>
+        <div className="section">
+          <Posters />
+        </div>
+        <div className="section">
+          <ProductList />
+        </div>
+        <div className="section">
+          <ProductBenefit />
+        </div>
+        <div className="section">
+          <TestimonialCarousel />
+        </div>
+        <div className="section">
+          <Categories />
+        </div>
+        <div className="section">
+          <ContactForm />
+        </div>
       </main>
       <Footer />
     </>
