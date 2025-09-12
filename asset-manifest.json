@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CuraSlim1/static/css/main.f8eea819.css",
-    "main.js": "/CuraSlim1/static/js/main.bfb3ab91.js",
+    "main.css": "/CuraSlim1/static/css/main.f110f05e.css",
+    "main.js": "/CuraSlim1/static/js/main.f98e76d1.js",
     "static/media/Cat2.jpg": "/CuraSlim1/static/media/Cat2.d78efccc07c2ec79e2f3.jpg",
     "static/media/Cat3.jpg": "/CuraSlim1/static/media/Cat3.60894cde9f9d45761967.jpg",
     "static/media/BannerDes.jpg": "/CuraSlim1/static/media/BannerDes.a02f928d02dfaee60259.jpg",
@@ -14,11 +14,11 @@
     "static/media/Cura-Slim-Website-Tube-1.png": "/CuraSlim1/static/media/Cura-Slim-Website-Tube-1.7e47cdb61bdca7d72787.png",
     "static/media/Logo1.JPG": "/CuraSlim1/static/media/Logo1.f0b626d3ee8b9455a2ae.JPG",
     "index.html": "/CuraSlim1/index.html",
-    "main.f8eea819.css.map": "/CuraSlim1/static/css/main.f8eea819.css.map",
-    "main.bfb3ab91.js.map": "/CuraSlim1/static/js/main.bfb3ab91.js.map"
+    "main.f110f05e.css.map": "/CuraSlim1/static/css/main.f110f05e.css.map",
+    "main.f98e76d1.js.map": "/CuraSlim1/static/js/main.f98e76d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8eea819.css",
-    "static/js/main.bfb3ab91.js"
+    "static/css/main.f110f05e.css",
+    "static/js/main.f98e76d1.js"
   ]
 }
