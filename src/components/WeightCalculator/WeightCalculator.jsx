@@ -17,42 +17,42 @@ function WeightCalculator() {
       const idealMax = (24.9 * h * h).toFixed(1);
       setIdealWeight(`${idealMin} - ${idealMax} kg`);
     } else {
-      setBmi('Invalid input');
-      setIdealWeight('Invalid input');
+      setBmi('Entrée invalide');
+      setIdealWeight('Entrée invalide');
     }
   };
 
   return (
     <div className="calculator-container">
-      <h2 id="calculator-title">Weight Calculator</h2>
+      <h2 id="calculator-title">Calculateur de Poids</h2>
       <div id="calculator-grid">
         <div id="calculator-card" className="animated-child">
           <div id="input-group" className="animated-child">
-            <label>Weight (kg):</label>
+            <label>Poids (kg) :</label>
             <input
               type="number"
               value={weight}
               onChange={(e) => setWeight(e.target.value)}
-              placeholder="Enter weight"
+              placeholder="Entrer le poids"
             />
           </div>
           <div id="input-group" className="animated-child">
-            <label>Height (cm):</label>
+            <label>Taille (cm) :</label>
             <input
               type="number"
               value={height}
               onChange={(e) => setHeight(e.target.value)}
-              placeholder="Enter height"
+              placeholder="Entrer la taille"
             />
           </div>
           <button id="calculator-btn" className="animated-child" onClick={handleCalculate}>
-            Calculate BMI & Ideal Weight
+            Calculer IMC et Poids Idéal
           </button>
           <div id="result" className="animated-child">
-            BMI: {bmi}
+            IMC : {bmi}
           </div>
           <div id="result" className="animated-child">
-            Ideal Weight: {idealWeight}
+            Poids Idéal : {idealWeight}
           </div>
         </div>
       </div>
