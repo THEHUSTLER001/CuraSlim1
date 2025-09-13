@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CuraSlim1/static/css/main.345e0427.css",
-    "main.js": "/CuraSlim1/static/js/main.11cf95b9.js",
+    "main.js": "/CuraSlim1/static/js/main.962d83a0.js",
     "static/media/Cat2.jpg": "/CuraSlim1/static/media/Cat2.d78efccc07c2ec79e2f3.jpg",
     "static/media/Cat3.jpg": "/CuraSlim1/static/media/Cat3.60894cde9f9d45761967.jpg",
     "static/media/BannerDes.jpg": "/CuraSlim1/static/media/BannerDes.a02f928d02dfaee60259.jpg",
@@ -16,10 +16,10 @@
     "static/media/Logo1.JPG": "/CuraSlim1/static/media/Logo1.f0b626d3ee8b9455a2ae.JPG",
     "index.html": "/CuraSlim1/index.html",
     "main.345e0427.css.map": "/CuraSlim1/static/css/main.345e0427.css.map",
-    "main.11cf95b9.js.map": "/CuraSlim1/static/js/main.11cf95b9.js.map"
+    "main.962d83a0.js.map": "/CuraSlim1/static/js/main.962d83a0.js.map"
   },
   "entrypoints": [
     "static/css/main.345e0427.css",
-    "static/js/main.11cf95b9.js"
+    "static/js/main.962d83a0.js"
   ]
 }
