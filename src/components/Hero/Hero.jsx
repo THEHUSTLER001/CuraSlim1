@@ -41,8 +41,8 @@ export default function Hero() {
               <span style={{ color: '#FFFFFF' }}>Minceur</span>
             </h1>
             <div className="hero__actions">
-              <button className="btn btn--outline" type="button" aria-label="Discover">DISCOVER NOW</button>
-              <button className="btn btn--primary" type="button" aria-label="Buy now">BUY NOW</button>
+              <button className="btn1 btn--outline" type="button" aria-label="Discover">DISCOVER NOW</button>
+              <button className="btn1 btn--primary" type="button" aria-label="Buy now">BUY NOW</button>
             </div>
           </div>
         </div>

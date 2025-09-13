@@ -1,0 +1,33 @@
+/* src/components/Accueil.css */
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dashboard-card {
+  flex: 1 1 200px;
+  margin: 0.5rem;
+  min-width: 200px;
+}
+
+.chart-container {
+  height: 400px;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .dashboard-card {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-card {
+    flex: 1 1 100%;
+  }
+
+  .chart-container {
+    height: 300px;
+  }
+}

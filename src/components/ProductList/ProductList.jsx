@@ -2,10 +2,12 @@ import React from 'react';
 import './ProductList.css';
 import products from '../../data/products';
 import ProductCard from '../ProductCard/ProductCard.jsx';
+import FloatingImageL from '../Floatingimages/FloatingImageL.jsx';
 
 export default function ProductList() {
   return (
     <section className="product-list" aria-label="Product list">
+      <FloatingImageL/>
       <div className="container">
      
 

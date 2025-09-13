@@ -1,0 +1,18 @@
+/* src/components/Dashboard.css */
+.dashboard-navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logout-btn {
+  margin-left: auto;
+}
+
+.dashboard-content {
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 0.5rem;
+  }
+}

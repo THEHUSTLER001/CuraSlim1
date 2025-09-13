@@ -1,0 +1,57 @@
+#fixed-buy-btn {
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #a50e99 0%, #c23db0 50%, #e16cc7 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(165, 14, 153, 0.4);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#fixed-buy-btn:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 15px 40px rgba(165, 14, 153, 0.6);
+}
+
+#fixed-buy-btn:active {
+  transform: translate(-50%, -50%) scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #fixed-buy-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  #fixed-buy-btn {
+    top: 80%;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 30px;
+  }
+}
+
+/* Synchronize animations with parent section visibility */
+.section:not(.visible) #fixed-buy-btn {
+  opacity: 0;
+  animation: none !important;
+  transition: none !important;
+}
+
+.section.visible #fixed-buy-btn {
+  animation: fadeInUp 1.2s ease-out forwards;
+}

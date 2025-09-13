@@ -23,10 +23,10 @@ function WeightCalculator() {
   };
 
   return (
-    <div className="calculator-container">
+    <div id="calculator-container">
       <h2 id="calculator-title">Calculateur de Poids</h2>
-      <div id="calculator-grid">
-        <div id="calculator-card" className="animated-child">
+      <div id="calculator-content">
+        <div id="input-section" className="animated-child">
           <div id="input-group" className="animated-child">
             <label>Poids (kg) :</label>
             <input
@@ -48,11 +48,15 @@ function WeightCalculator() {
           <button id="calculator-btn" className="animated-child" onClick={handleCalculate}>
             Calculer IMC et Poids Idéal
           </button>
-          <div id="result" className="animated-child">
-            IMC : {bmi}
-          </div>
-          <div id="result" className="animated-child">
-            Poids Idéal : {idealWeight}
+        </div>
+        <div id="result-section" className="animated-child">
+          <div id="result-card">
+            <div id="result" className="animated-child">
+              IMC : {bmi}
+            </div>
+            <div id="result" className="animated-child">
+              Poids Idéal : {idealWeight}
+            </div>
           </div>
         </div>
       </div>

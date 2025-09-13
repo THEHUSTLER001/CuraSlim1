@@ -11,6 +11,8 @@ import Categories from '../../components/Categories/Categories.jsx';
 import ProductBenefit from '../../components/ProductBenefit/ProductBenefit.jsx';
 import './LandingPage.css';
 import WeightCalculator from '../../components/WeightCalculator/WeightCalculator.jsx';
+import FloatingImageR from '../../components/Floatingimages/FloatingImageR.jsx';
+import FixedBuyButton from '../../components/FixedButton/FixedButton.jsx';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -55,13 +57,14 @@ export default function LandingPage() {
           <ProductList />
         </div>
         <div className="section">
-          <ProductBenefit />
-        </div>
-        <div className="section">
+          <FloatingImageR/>
           <TestimonialCarousel />
         </div>
+        <div className="section">
+          <ProductBenefit />
+        </div>
          <div className="section">
-<WeightCalculator/>
+           <WeightCalculator/>
         </div>
         <div className="section">
           <Categories />
@@ -71,6 +74,7 @@ export default function LandingPage() {
         </div>
       </main>
       <Footer />
+      <FixedBuyButton/>
     </>
   );
 }

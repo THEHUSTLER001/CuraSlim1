@@ -1,5 +1,6 @@
 import React from 'react';
 import './Showcase.css';
+import FloatingImageL2 from '../Floatingimages/FloatingImageL2';
 
 let centerImg, logoHale1, logoHale2, logoGR1, logoGR2;
 try { centerImg = require('../../assets/images/Annonce.jpg'); } catch (e) { centerImg = null; }
@@ -9,6 +10,7 @@ try { logoGR1 = require('../../assets/images/logo-gr-1.png'); } catch (e) { logo
 export default function Showcase() {
   return (
     <section className="showcase-hero" aria-labelledby="showcase-heading">
+      <FloatingImageL2/>
       <div className="showcase-hero__container">
         {/* LEFT: Title area */}
         <div className="showcase-hero__left">

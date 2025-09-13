@@ -1,0 +1,59 @@
+.floating-image {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.floating-container{
+  display: block;
+  width: 100%;
+}
+/* Positions */
+.floating-image.left {
+  top: -350px;
+    left: -200px;
+    width: 700px;
+}
+.floating-image.left2 {
+  top: -350px;
+    left: -200px;
+    width: 700px;
+}
+
+.floating-image.right {
+      bottom: -200px;
+    right: -200px;
+    width: 700px;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Slide-in + Float */
+@keyframes slideInLeft {
+  from { transform: translateX(-200px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideInRight {
+  from { transform: translateX(200px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-left {
+  animation: slideInLeft 1.5s ease forwards, float 6s ease-in-out infinite 2s;
+}
+.animate-slide-right {
+  animation: slideInRight 1.5s ease forwards, float 6s ease-in-out infinite 2s;
+}
+
+
+
+@media (max-width:900px){
+  
+  .floating-image{
+display: none;
+}
+}
