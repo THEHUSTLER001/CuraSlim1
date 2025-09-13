@@ -19,7 +19,7 @@ const ContactForm = () => {
   const navigate = useNavigate();
 
   // API base (build-time): set REACT_APP_API_URL when building (or leave empty to use same-origin)
-  const API = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API = 'https://curaslimback-production.up.railway.app';
 
   useEffect(() => {
     // IntersectionObserver to trigger animations when the form enters viewport

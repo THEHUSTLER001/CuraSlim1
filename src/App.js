@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="app">
       {/* 👇 Tell Router that your app lives under /CuraSlim1 */}
-      <Router basename="/CuraSlim1">
+      <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/thank-you" element={<ThankYou />} />
