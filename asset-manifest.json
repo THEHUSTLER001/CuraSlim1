@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CuraSlim1/static/css/main.f110f05e.css",
-    "main.js": "/CuraSlim1/static/js/main.e5ce1d5d.js",
+    "main.css": "/CuraSlim1/static/css/main.345e0427.css",
+    "main.js": "/CuraSlim1/static/js/main.0ef81048.js",
     "static/media/Cat2.jpg": "/CuraSlim1/static/media/Cat2.d78efccc07c2ec79e2f3.jpg",
     "static/media/Cat3.jpg": "/CuraSlim1/static/media/Cat3.60894cde9f9d45761967.jpg",
     "static/media/BannerDes.jpg": "/CuraSlim1/static/media/BannerDes.a02f928d02dfaee60259.jpg",
@@ -12,13 +12,14 @@
     "static/media/Pcard1.png": "/CuraSlim1/static/media/Pcard1.4f12cdeb1587101cc45f.png",
     "static/media/Annonce.jpg": "/CuraSlim1/static/media/Annonce.ec90117fef3386eeffe3.jpg",
     "static/media/Cura-Slim-Website-Tube-1.png": "/CuraSlim1/static/media/Cura-Slim-Website-Tube-1.7e47cdb61bdca7d72787.png",
+    "static/media/Cura-Slim-Website-Tube-2.png": "/CuraSlim1/static/media/Cura-Slim-Website-Tube-2.9be2fdf78b7ccabd9121.png",
     "static/media/Logo1.JPG": "/CuraSlim1/static/media/Logo1.f0b626d3ee8b9455a2ae.JPG",
     "index.html": "/CuraSlim1/index.html",
-    "main.f110f05e.css.map": "/CuraSlim1/static/css/main.f110f05e.css.map",
-    "main.e5ce1d5d.js.map": "/CuraSlim1/static/js/main.e5ce1d5d.js.map"
+    "main.345e0427.css.map": "/CuraSlim1/static/css/main.345e0427.css.map",
+    "main.0ef81048.js.map": "/CuraSlim1/static/js/main.0ef81048.js.map"
   },
   "entrypoints": [
-    "static/css/main.f110f05e.css",
-    "static/js/main.e5ce1d5d.js"
+    "static/css/main.345e0427.css",
+    "static/js/main.0ef81048.js"
   ]
 }
