@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route ,Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
 import ThankYou from './components/ThankYou/ThankYou';
 import './index.css';
@@ -8,26 +8,33 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 
-
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token');
   if (!token) {
-    return <Navigate to="/admin/login" replace />;
+    return <Navigate to="/CuraSlim1/admin/login" replace />;
   }
   return children;
 }
 
-
 function App() {
   return (
     <div className="app">
-      <Router>
+      {/* 👇 Tell Router that your app lives under /CuraSlim1 */}
+      <Router basename="/CuraSlim1">
         <Routes>
-         <Route path="/CuraSlim1" element={<LandingPage />} />
-          <Route path="/CuraSlim1/thank-you" element={<ThankYou />} />
-          <Route path="/CuraSlim1/admin/login" element={<Login />} />
-        <Route path="/CuraSlim1/admin/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="*" element={<Navigate to="/admin/login" replace />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/admin/login" element={<Login />} />
+          <Route
+            path="/admin/*"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          {/* fallback */}
+          <Route path="*" element={<Navigate to="/admin/login" replace />} />
         </Routes>
       </Router>
     </div>

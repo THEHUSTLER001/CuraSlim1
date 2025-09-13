@@ -69,7 +69,7 @@ export default function LandingPage() {
         <div className="section">
           <Categories />
         </div>
-        <div className="section">
+        <div id="order" className="section">
           <ContactForm />
         </div>
       </main>

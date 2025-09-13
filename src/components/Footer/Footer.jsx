@@ -57,13 +57,11 @@ const Footer = () => {
         <div className="footer-section">
           <h3>INFORMATION</h3>
           <ul>
-            <li><a href="#">About Store</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacts</a></li>
-            <li><a href="#">Front Page</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Theme Shortcodes</a></li>
-            <li><a href="#">Typography</a></li>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#list">Produits</a></li>
+            <li><a href="#weight">Calculer poids</a></li>
+            <li><a href="#order">Acheter</a></li>
+            
           </ul>
         </div>
 
