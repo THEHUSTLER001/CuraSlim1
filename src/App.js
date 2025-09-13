@@ -24,9 +24,9 @@ function App() {
       <Router>
         <Routes>
          <Route path="/CuraSlim1" element={<LandingPage />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/admin/login" element={<Login />} />
-        <Route path="/admin/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/CuraSlim1/thank-you" element={<ThankYou />} />
+          <Route path="/CuraSlim1/admin/login" element={<Login />} />
+        <Route path="/CuraSlim1/admin/*" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="*" element={<Navigate to="/admin/login" replace />} />
         </Routes>
       </Router>
