@@ -6,8 +6,8 @@ import App from './App';
 import axios from 'axios';
 
 // Set axios defaults (adjust baseURL if backend is not on same origin)
-// axios.defaults.baseURL = 'https://curaslimback-production.up.railway.app';
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = 'https://curaslimback-production.up.railway.app';
+// axios.defaults.baseURL = 'http://localhost:5000';
 
 // Axios interceptor to add token to headers
 axios.interceptors.request.use(config => {
