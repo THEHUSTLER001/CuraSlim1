@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/CuraSlim1/static/css/main.345e0427.css",
-    "main.js": "/CuraSlim1/static/js/main.962d83a0.js",
-    "static/media/Cat2.jpg": "/CuraSlim1/static/media/Cat2.d78efccc07c2ec79e2f3.jpg",
-    "static/media/Cat3.jpg": "/CuraSlim1/static/media/Cat3.60894cde9f9d45761967.jpg",
-    "static/media/BannerDes.jpg": "/CuraSlim1/static/media/BannerDes.a02f928d02dfaee60259.jpg",
-    "static/media/Cat1.jpg": "/CuraSlim1/static/media/Cat1.9d3f3d78a5883452eb37.jpg",
-    "static/media/Pr2.jpg": "/CuraSlim1/static/media/Pr2.656146fa73fc665a5665.jpg",
-    "static/media/Pr3.jpg": "/CuraSlim1/static/media/Pr3.996e1c871ed1ea448260.jpg",
-    "static/media/Pr1.jpg": "/CuraSlim1/static/media/Pr1.6158adeb7e99b9c38589.jpg",
-    "static/media/Pcard1.png": "/CuraSlim1/static/media/Pcard1.4f12cdeb1587101cc45f.png",
-    "static/media/Annonce.jpg": "/CuraSlim1/static/media/Annonce.ec90117fef3386eeffe3.jpg",
-    "static/media/Cura-Slim-Website-Tube-1.png": "/CuraSlim1/static/media/Cura-Slim-Website-Tube-1.7e47cdb61bdca7d72787.png",
-    "static/media/Cura-Slim-Website-Tube-2.png": "/CuraSlim1/static/media/Cura-Slim-Website-Tube-2.9be2fdf78b7ccabd9121.png",
-    "static/media/Logo1.JPG": "/CuraSlim1/static/media/Logo1.f0b626d3ee8b9455a2ae.JPG",
-    "index.html": "/CuraSlim1/index.html",
-    "main.345e0427.css.map": "/CuraSlim1/static/css/main.345e0427.css.map",
-    "main.962d83a0.js.map": "/CuraSlim1/static/js/main.962d83a0.js.map"
+    "main.css": "/static/css/main.ffd2977e.css",
+    "main.js": "/static/js/main.1c9e9ffd.js",
+    "static/media/Cat2.jpg": "/static/media/Cat2.d78efccc07c2ec79e2f3.jpg",
+    "static/media/Cat3.jpg": "/static/media/Cat3.60894cde9f9d45761967.jpg",
+    "static/media/BannerDes.jpg": "/static/media/BannerDes.a02f928d02dfaee60259.jpg",
+    "static/media/Cat1.jpg": "/static/media/Cat1.9d3f3d78a5883452eb37.jpg",
+    "static/media/Pr2.jpg": "/static/media/Pr2.656146fa73fc665a5665.jpg",
+    "static/media/Pr3.jpg": "/static/media/Pr3.996e1c871ed1ea448260.jpg",
+    "static/media/Pr1.jpg": "/static/media/Pr1.6158adeb7e99b9c38589.jpg",
+    "static/media/Pcard1.png": "/static/media/Pcard1.4f12cdeb1587101cc45f.png",
+    "static/media/Annonce.jpg": "/static/media/Annonce.ec90117fef3386eeffe3.jpg",
+    "static/media/Cura-Slim-Website-Tube-1.png": "/static/media/Cura-Slim-Website-Tube-1.7e47cdb61bdca7d72787.png",
+    "static/media/Cura-Slim-Website-Tube-2.png": "/static/media/Cura-Slim-Website-Tube-2.9be2fdf78b7ccabd9121.png",
+    "static/media/Logo1.JPG": "/static/media/Logo1.f0b626d3ee8b9455a2ae.JPG",
+    "index.html": "/index.html",
+    "main.ffd2977e.css.map": "/static/css/main.ffd2977e.css.map",
+    "main.1c9e9ffd.js.map": "/static/js/main.1c9e9ffd.js.map"
   },
   "entrypoints": [
-    "static/css/main.345e0427.css",
-    "static/js/main.962d83a0.js"
+    "static/css/main.ffd2977e.css",
+    "static/js/main.1c9e9ffd.js"
   ]
 }
