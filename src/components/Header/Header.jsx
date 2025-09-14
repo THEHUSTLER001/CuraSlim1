@@ -38,13 +38,23 @@ export default function Header() {
     };
   }, [open]);
 
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  };
+
   const links = [
-    { label: 'Home', href: '#' },
-    { label: 'Pages', href: '#' },
-    { label: 'Features', href: '#' },
-    { label: 'Shop', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Contact', href: '#' }
+    { label: 'Accueil', sectionId: 'home' },
+    { label: 'Produits', sectionId: 'list' },
+    { label: 'Calculer poids', sectionId: 'weight' },
+    { label: 'Acheter', sectionId: 'order' }
   ];
 
   return (
@@ -59,7 +69,6 @@ export default function Header() {
               <span className="logo__text">Cura</span>
             )}
           </div>
-
           <button
             ref={btnRef}
             className={`nav-toggle ${open ? 'is-open' : ''}`}
@@ -87,12 +96,16 @@ export default function Header() {
               <span className="logo__text logo__text--desktop">Cura</span>
             )}
           </div>
-
           <nav className="main-nav main-nav--desktop" aria-label="Main navigation">
             <ul className="main-nav__list main-nav__list--desktop">
               {links.map(l => (
                 <li className="main-nav__item" key={l.label}>
-                  <a className="main-nav__link" href={l.href}>{l.label}</a>
+                  <button
+                    className="main-nav__link main-nav__link--button"
+                    onClick={() => scrollToSection(l.sectionId)}
+                  >
+                    {l.label}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -110,13 +123,15 @@ export default function Header() {
         <ul className="mobile-nav__list">
           {links.map(l => (
             <li key={l.label} className="mobile-nav__item">
-              <a
-                className="mobile-nav__link"
-                href={l.href}
-                onClick={() => setOpen(false)}
+              <button
+                className="mobile-nav__link mobile-nav__link--button"
+                onClick={() => {
+                  scrollToSection(l.sectionId);
+                  setOpen(false);
+                }}
               >
                 {l.label}
-              </a>
+              </button>
             </li>
           ))}
         </ul>

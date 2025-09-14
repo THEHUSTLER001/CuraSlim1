@@ -47,13 +47,13 @@ export default function LandingPage() {
         <div className="section">
           <Hero />
         </div>
-        <div className="section">
+        <div id="home" className="section">
           <Showcase />
         </div>
         <div className="section">
           <Posters />
         </div>
-        <div className="section">
+        <div id="list" className="section">
           <ProductList />
         </div>
         <div className="section">
@@ -63,7 +63,7 @@ export default function LandingPage() {
         <div className="section">
           <ProductBenefit />
         </div>
-         <div className="section">
+         <div id="weight" className="section">
            <WeightCalculator/>
         </div>
         <div className="section">

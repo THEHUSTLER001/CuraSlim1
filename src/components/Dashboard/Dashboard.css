@@ -1,18 +1,120 @@
-/* src/components/Dashboard.css */
 .dashboard-navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #dee2e6;
+  background-color: white;
 }
 
-.logout-btn {
-  margin-left: auto;
+.sidebar-col {
+  background-color: #ffffff;
+  border-right: 1px solid #dee2e6;
+  height: calc(100vh - 56px); /* Adjust based on navbar height */
+  position: sticky;
+  top: 56px; /* Navbar height */
+  overflow-y: auto;
+}
+
+.sidebar-nav .nav-link {
+  padding: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar-nav .nav-link.active {
+  background-color: #ffffff;
+  color: #a50e99;
+  font-weight: bold;
+}
+
+.sidebar-nav .nav-link:hover {
+  background-color: #f1f1f1;
 }
 
 .dashboard-content {
-  padding: 1rem;
+  padding: 2rem;
 }
 
-@media (max-width: 768px) {
-  .dashboard-content {
-    padding: 0.5rem;
+.dashboard-container {
+  margin-top: 1rem;
+}
+
+@media (max-width: 991px) {
+  .dashboard-container {
+    margin-top: 0;
   }
+}
+
+/* Additions to Dashboard.css for styling the language switcher and logout button */
+.logout-btn {
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logout-btn:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.logout-btn svg {
+  font-size: 1.1rem;
+}
+
+/* Language Switcher Styles */
+#lang-dropdown {
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+}
+
+#lang-dropdown:hover {
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+}
+
+#lang-dropdown svg {
+  font-size: 1.1rem;
+}
+
+.dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dee2e6;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+/* Mobile Sidebar Logout Button */
+.sidebar-nav .btn {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.sidebar-nav .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }

@@ -1,8 +1,31 @@
 import React from "react";
-import { Truck, Gift, Shield, Headphones, Facebook, Twitter, Instagram,  } from "lucide-react";
+import { Truck, Gift, Shield, Headphones, Facebook, Twitter, Instagram, } from "lucide-react";
 import "./Footer.css";
 
 const Footer = () => {
+  // Load Instagram embed script
+  React.useEffect(() => {
+    if (window.instgrm) {
+      window.instgrm.Embeds.process();
+    } else {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = '//www.instagram.com/embed.js';
+      document.body.appendChild(script);
+    }
+  }, []);
+  // Smooth scroll function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      });
+    }
+  };
+
   return (
     <footer className="footer">
       {/* Top Benefits Section */}
@@ -42,7 +65,6 @@ const Footer = () => {
         {/* Newsletter */}
         <div className="footer-section newsletter">
           <h3>Socials</h3>
-          
           <div className="social-icons">
             <Facebook />
             <Twitter />
@@ -57,19 +79,58 @@ const Footer = () => {
         <div className="footer-section">
           <h3>INFORMATION</h3>
           <ul>
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#list">Produits</a></li>
-            <li><a href="#weight">Calculer poids</a></li>
-            <li><a href="#order">Acheter</a></li>
-            
+            <li>
+              <button 
+                onClick={() => scrollToSection('home')}
+                style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
+              >
+                Accueil
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('list')}
+                style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
+              >
+                Produits
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('weight')}
+                style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
+              >
+                Calculer poids
+              </button>
+            </li>
+            <li>
+              <button 
+                onClick={() => scrollToSection('order')}
+                style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
+              >
+                Acheter
+              </button>
+            </li>
           </ul>
         </div>
 
         {/* Instagram Shop */}
         <div className="footer-section instagram-shop">
           <h3>INSTAGRAM SHOP</h3>
-          <div className="instagram-placeholder">
-            <img src="https://www.instagram.com/curaslim/p/DOMBbPKDU4l/" alt="post" />
+          <div className="instagram-post">
+            <a 
+              href="https://www.instagram.com/curaslim/p/DOMBbPKDU4l/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="instagram-link"
+            >
+              <div className="instagram-preview">
+                <div className="instagram-placeholder">
+                  <Instagram className="instagram-icon" />
+                  <p>View on Instagram</p>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>

@@ -192,3 +192,64 @@
 .footer-payments div:last-child {
   background-color: #1e40af;
 }
+.footer-section ul li button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+}
+
+.footer-section ul li button:hover {
+  color: rgb(179, 12, 179); /* Replace with your desired hover color */
+}
+/* Instagram Section Styles */
+.instagram-post {
+  margin-top: 1rem;
+}
+
+.instagram-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.instagram-link:hover {
+  transform: scale(1.05);
+}
+
+.instagram-preview {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.instagram-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.instagram-placeholder p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
