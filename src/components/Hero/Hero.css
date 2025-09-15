@@ -187,3 +187,48 @@ border: 3px solid purple;
     transform: translateX(0);
   }
 }
+
+/* Price Stripe Styles */
+.price-stripe {
+  overflow: hidden;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.price-items {
+  display: flex;
+  animation: scrollPrice 15s linear infinite;
+  white-space: nowrap;
+  padding: 0 1rem;
+}
+
+.price-item {
+  display: inline-block;
+  margin-right: 2rem;
+  padding: 0.5rem 0;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  color: var(--price-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Animation Keyframes */
+@keyframes scrollPrice {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .price-items {
+    animation-duration: 25s;
+  }
+}

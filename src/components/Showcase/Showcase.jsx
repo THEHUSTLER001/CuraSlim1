@@ -2,10 +2,10 @@ import React from 'react';
 import './Showcase.css';
 import FloatingImageL2 from '../Floatingimages/FloatingImageL2';
 
-let centerImg, logoHale1, logoHale2, logoGR1, logoGR2;
+let centerImg, logoHale1, logoGR1;
 try { centerImg = require('../../assets/images/Annonce.jpg'); } catch (e) { centerImg = null; }
-try { logoHale1 = require('../../assets/images/logo-hale-1.png'); } catch (e) { logoHale1 = null; }
-try { logoGR1 = require('../../assets/images/logo-gr-1.png'); } catch (e) { logoGR1 = null; }
+try { logoHale1 = require('../../assets/images/LOGO11.PNG'); } catch (e) { logoHale1 = null; }
+try { logoGR1 = require('../../assets/images/LOGO22.PNG'); } catch (e) { logoGR1 = null; }
 
 export default function Showcase() {
   return (

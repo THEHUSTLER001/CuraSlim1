@@ -75,6 +75,9 @@ overflow: hidden;
 .section.visible .animated-child:nth-child(4) {
   animation-delay: 0.8s;
 }
+.section.visible .animated-child:nth-child(5) {
+  animation-delay: 1s;
+}
 
 @keyframes fadeInUp {
   from {

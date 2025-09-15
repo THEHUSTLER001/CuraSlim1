@@ -1,57 +1,108 @@
+/* Main buy button */
 #fixed-buy-btn {
   position: fixed;
-  top: 90%;
+  bottom: 5%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background: linear-gradient(135deg, #a50e99 0%, #c23db0 50%, #e16cc7 100%);
   color: white;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   padding: 1rem 2rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 30px rgba(165, 14, 153, 0.4);
   z-index: 1000;
+  display: flex;
+  align-items: center;
   transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 #fixed-buy-btn:hover {
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translateX(-50%) scale(1.05);
   box-shadow: 0 15px 40px rgba(165, 14, 153, 0.6);
 }
 
-#fixed-buy-btn:active {
-  transform: translate(-50%, -50%) scale(0.98);
+/* Floating buttons (WhatsApp + Email) */
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Responsive Design */
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  bottom: 50%;
+  background-color: #25D366; /* WhatsApp green */
+}
+
+/* Email button */
+.email-btn {
+  bottom: 40%;
+  background-color: #d93025; /* Gmail red */
+}
+
+/* --- RESPONSIVE SIZES ONLY --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  #fixed-buy-btn {
+    font-size: 1rem;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .floating-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobiles */
 @media (max-width: 768px) {
   #fixed-buy-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 40px;
+    font-size: 0.95rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .floating-btn svg {
+    width: 18px;
+    height: 18px;
   }
 }
 
+/* Small Phones */
 @media (max-width: 480px) {
   #fixed-buy-btn {
-    top: 80%;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-    border-radius: 30px;
+    width: 60%;
+    font-size: 0.85rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
   }
-}
 
-/* Synchronize animations with parent section visibility */
-.section:not(.visible) #fixed-buy-btn {
-  opacity: 0;
-  animation: none !important;
-  transition: none !important;
-}
-
-.section.visible #fixed-buy-btn {
-  animation: fadeInUp 1.2s ease-out forwards;
 }

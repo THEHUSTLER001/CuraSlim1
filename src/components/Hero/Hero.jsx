@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+
 // Fallback to desktop image if mobile missing
 const heroDesktop = require('../../assets/images/BannerDes.jpg');
 let heroMobile;
@@ -16,20 +17,58 @@ export default function Hero() {
     '--hero-height-desktop': '76vh',
     '--hero-height-desktop-min': '520px',
     '--hero-height-mobile': '72vh',
+    '--price-color': '#a50e99' // Primary price color
   };
+   
+   const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+  // Price data
+  const prices = [
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+     { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+     { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+     { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' },
+    { old: '268,50 DH', new: '179.89 DH' }
+  ];
+
   return (
     <section
       className="hero"
       aria-labelledby="hero-heading"
       style={cssVars}
     >
-      <div className="hero__announcement" role="region" aria-label="Announcement">
-        <div className="container hero__announcement-inner">
-          <p className="hero__announcement-text">
-            Limited time — 20% OFF on first order! Use code <strong>SAVE20</strong>
-          </p>
-        </div>
-      </div>
+          
+          {/* Looping price stripe */}
+          <div className="price-stripe">
+            <div className="price-items" aria-live="polite">
+              {prices.map((price, index) => (
+                <div key={index} className="price-item">
+                  <span className="old-price"> {price.old}</span>
+                  <span className="new-price"> {price.new}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        
+      
+      
       <div className="hero__overlay">
         <div className="container hero__inner">
           <div className="hero__left">
@@ -41,8 +80,8 @@ export default function Hero() {
               <span style={{ color: '#FFFFFF' }}>Minceur</span>
             </h1>
             <div className="hero__actions">
-              <button className="btn1 btn--outline" type="button" aria-label="Discover">DISCOVER NOW</button>
-              <button className="btn1 btn--primary" type="button" aria-label="Buy now">BUY NOW</button>
+              <button className="btn1 btn--outline" type="button" aria-label="Discover" oonClick={() => scrollToSection("")} >DECOUVIR</button>
+              <button className="btn1 btn--primary" type="button" aria-label="Buy now" onClick={() => scrollToSection("order")} >COMMANDER</button>
             </div>
           </div>
         </div>

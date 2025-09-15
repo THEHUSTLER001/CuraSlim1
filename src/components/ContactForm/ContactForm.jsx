@@ -14,15 +14,14 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [animated, setAnimated] = useState(false);
-  const [packPrice, setPackPrice] = useState(null); // will fetch from backend (or fallback)
+  const [packPrice, setPackPrice] = useState(null);
   const containerRef = useRef(null);
   const navigate = useNavigate();
 
-  // API base (build-time): set REACT_APP_API_URL when building (or leave empty to use same-origin)
   const API = 'https://curaslimback-production.up.railway.app';
 
+  // Animation on scroll
   useEffect(() => {
-    // IntersectionObserver to trigger animations when the form enters viewport
     const el = containerRef.current;
     if (!el) return;
 
@@ -31,7 +30,7 @@ const ContactForm = () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             setAnimated(true);
-            obs.unobserve(el); // animate once
+            obs.unobserve(el);
           }
         });
       },
@@ -49,8 +48,8 @@ const ContactForm = () => {
     return () => obs.disconnect();
   }, []);
 
+  // Fetch pack price from backend (or fallback)
   useEffect(() => {
-    // Fetch pack price from backend config endpoint (optional)
     let mounted = true;
     (async () => {
       try {
@@ -59,7 +58,6 @@ const ContactForm = () => {
         const json = await res.json();
         if (mounted && json.packPrice != null) setPackPrice(Number(json.packPrice));
       } catch (err) {
-        // fallback price if backend not reachable
         if (mounted && packPrice == null) setPackPrice(179.89);
       }
     })();
@@ -67,6 +65,7 @@ const ContactForm = () => {
     // eslint-disable-next-line
   }, []);
 
+  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -75,15 +74,17 @@ const ContactForm = () => {
     }));
   };
 
+  // Quantity increment/decrement
   const handleQuantityChange = (operation) => {
     setFormData(prev => ({
       ...prev,
       quantity: operation === 'increment'
-        ? Math.min(prev.quantity + 1, 10) // Limit to 10
+        ? Math.min(prev.quantity + 1, 10)
         : Math.max(1, prev.quantity - 1)
     }));
   };
 
+  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -95,10 +96,9 @@ const ContactForm = () => {
         phone: formData.phone,
         address: formData.address,
         quantity: Number(formData.quantity || 1),
-        // optional: you can include any note or metadata here
       };
 
-      const url = `${API}/api/order`; // if API is '', this will post to same origin /api/order
+      const url = `${API}/api/order`;
       const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -110,11 +110,9 @@ const ContactForm = () => {
         throw new Error(errJson.error || 'Failed to submit order');
       }
 
-      const json = await res.json();
-      const orderId = json.order?.id || '—';
-
+      await res.json();
       setFormData({ name: '', phone: '', address: '', quantity: 1 });
-      navigate('/thank-you'); // Redirect to thank you page
+      navigate('/thank-you');
     } catch (error) {
       console.error('Order error:', error);
       setMessage('❌ Erreur lors de l\'envoi. Veuillez réessayer plus tard.');
@@ -123,7 +121,9 @@ const ContactForm = () => {
     }
   };
 
- 
+  // Compute total price
+  const total = packPrice ? (packPrice * formData.quantity).toFixed(2) : "—";
+
   return (
     <div
       className={`contact-form-container ${animated ? 'animated' : ''}`}
@@ -222,7 +222,10 @@ const ContactForm = () => {
               disabled={isLoading}
               style={{ ['--i']: 9 }}
             >
-              {isLoading ? 'Envoi...' : '🛒 ACHETEZ / اشتري الآن'}
+              {isLoading 
+                ? 'Envoi... / جارٍ الإرسال...' 
+                : `🛒 Acheter - ${total} DH - إشتري`
+              }
             </button>
           </form>
         </div>

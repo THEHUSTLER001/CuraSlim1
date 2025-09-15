@@ -3,7 +3,7 @@
   --accent-2: #7604b8;
   --card-bg-gradient: linear-gradient(229deg, #f200ff, #7604b8);
   --field-bg: #f4f7fb;
-  --field-border: #e6eefb;
+  --field-border: #6b057c;
   --text-dark: #14213d;
 }
 
@@ -67,15 +67,15 @@
 }
 
 .form-container {
-  padding: 28px;
-  border-radius: 14px;
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  color: var(--text-dark);
-  box-shadow: 0 18px 48px rgba(18,18,40,0.08);
-  border: 1px solid rgba(20,33,61,0.04);
-  box-sizing: border-box;
+ padding: 28px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    background: #9312d154;
+    color: var(--text-dark);
+    box-shadow: 0 18px 48px rgba(18, 18, 40, 0.08);
+    border: 1px solid rgb(100 3 106);
+    box-sizing: border-box;
 }
 
 .form-section h2 {
@@ -101,18 +101,19 @@
 }
 
 .quantity-btn {
-  width: 40px;
-  height: 40px;
-  background: #a50e99;
-  color: #fff;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 20px;
-  font-weight: bold;
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ border: 1px solid purple;
+    width: 40px;
+    height: 40px;
+    background: #9312d154;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .quantity-btn:hover {
@@ -139,7 +140,7 @@
   left: 14px;
   z-index: 2;
   font-size: 18px;
-  color: #6b6f76;
+  color: #ff00cc;
 }
 
 .input-wrapper input {

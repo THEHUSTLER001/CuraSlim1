@@ -13,6 +13,8 @@ import './LandingPage.css';
 import WeightCalculator from '../../components/WeightCalculator/WeightCalculator.jsx';
 import FloatingImageR from '../../components/Floatingimages/FloatingImageR.jsx';
 import FixedBuyButton from '../../components/FixedButton/FixedButton.jsx';
+import MessageForm from '../../components/MessageForm/MessageForm.jsx';
+import DefSection from '../../components/DefSection/DefSection.jsx';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -53,6 +55,9 @@ export default function LandingPage() {
         <div className="section">
           <Posters />
         </div>
+         <div id="about" className="section">
+          <DefSection/>
+        </div>
         <div id="list" className="section">
           <ProductList />
         </div>
@@ -63,16 +68,21 @@ export default function LandingPage() {
         <div className="section">
           <ProductBenefit />
         </div>
+         <div id="order" className="section">
+          <ContactForm />
+        </div>
          <div id="weight" className="section">
            <WeightCalculator/>
         </div>
         <div className="section">
           <Categories />
         </div>
-        <div id="order" className="section">
-          <ContactForm />
+        <div id="message" className="section">
+          <MessageForm/>
         </div>
+
       </main>
+
       <Footer />
       <FixedBuyButton/>
     </>
