@@ -1,4 +1,5 @@
-.contact-container {
+/* MessageForm.css */
+.messageform-contact-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -6,7 +7,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.contact-title {
+.messageform-contact-title {
   text-align: center;
   font-size: 36px;
   margin-bottom: 30px;
@@ -14,11 +15,11 @@
   position: relative;
 }
 
-.contact-title span {
+.messageform-contact-title span {
   color: #a50e99;
 }
 
-.contact-title::after {
+.messageform-contact-title::after {
   content: '';
   display: block;
   width: 100px;
@@ -27,25 +28,35 @@
   margin: 10px auto 30px;
 }
 
-.contact-form {
+.messageform-contact-form {
   display: grid;
   gap: 25px;
 }
 
-.form-group {
+.messageform-form-group {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
-.form-group label {
+.messageform-form-group:not(.messageform-single-input) {
+  grid-template-columns: 1fr 1fr;
+}
+
+.messageform-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageform-input-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
   color: #444;
 }
 
-.form-group input,
-.form-group textarea {
+.messageform-input-group input,
+.messageform-input-group textarea {
   width: 100%;
   padding: 14px;
   border: 1px solid #e0e0e0;
@@ -54,18 +65,14 @@
   transition: all 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.messageform-input-group input:focus,
+.messageform-input-group textarea:focus {
   outline: none;
   border-color: #a50e99;
   box-shadow: 0 0 0 3px rgba(165, 14, 153, 0.15);
 }
 
-.form-group:nth-child(1) {
-  grid-template-columns: 1fr 1fr;
-}
-
-.submit-button {
+.messageform-submit-button {
   width: 220px;
   margin: 10px auto;
   padding: 14px 20px;
@@ -80,36 +87,92 @@
   box-shadow: 0 4px 6px rgba(165, 14, 153, 0.2);
 }
 
-.submit-button:hover {
+.messageform-submit-button:hover:not(:disabled) {
   background: #8d0c84;
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(165, 14, 153, 0.25);
 }
 
-.contact-info {
+.messageform-submit-button:disabled,
+.messageform-submit-button.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.messageform-spinner {
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: messageform-spin 1s linear infinite;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+@keyframes messageform-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.messageform-status-message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.messageform-status-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.messageform-status-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.messageform-status-icon {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.messageform-contact-info {
   text-align: center;
   margin-top: 40px;
   padding-top: 25px;
   border-top: 1px solid #eee;
 }
 
-.contact-info p {
+.messageform-contact-info p {
   margin: 12px 0;
   color: #555;
   line-height: 1.5;
 }
 
-.contact-info span {
+.messageform-contact-info span {
   color: #a50e99;
   font-weight: 700;
 }
 
 @media (max-width: 600px) {
-  .form-group:nth-child(1) {
+  .messageform-form-group:not(.messageform-single-input) {
     grid-template-columns: 1fr;
   }
   
-  .contact-title {
+  .messageform-contact-title {
     font-size: 28px;
+  }
+  
+  .messageform-submit-button {
+    width: 100%;
   }
 }

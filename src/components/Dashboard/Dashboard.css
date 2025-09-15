@@ -78,8 +78,9 @@
 }
 
 #lang-dropdown:hover {
-  border-color: #007bff;
-  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.15);
+  color: black;
+  border-color: #7a12c4;
+  box-shadow: 0 2px 8px rgba(183, 0, 255, 0.15);
 }
 
 #lang-dropdown svg {
@@ -98,8 +99,8 @@
 }
 
 .dropdown-item:hover {
-  background-color: #f8f9fa;
-  color: #007bff;
+  background-color: #f9f8fa;
+  color: #b300ff;
 }
 
 /* Mobile Sidebar Logout Button */

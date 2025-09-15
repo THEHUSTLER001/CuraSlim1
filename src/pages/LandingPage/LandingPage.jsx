@@ -15,6 +15,7 @@ import FloatingImageR from '../../components/Floatingimages/FloatingImageR.jsx';
 import FixedBuyButton from '../../components/FixedButton/FixedButton.jsx';
 import MessageForm from '../../components/MessageForm/MessageForm.jsx';
 import DefSection from '../../components/DefSection/DefSection.jsx';
+import About from '../../components/About/About.jsx';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -56,6 +57,9 @@ export default function LandingPage() {
           <Posters />
         </div>
          <div id="about" className="section">
+          <About/>
+        </div>
+        <div className="section">
           <DefSection/>
         </div>
         <div id="list" className="section">

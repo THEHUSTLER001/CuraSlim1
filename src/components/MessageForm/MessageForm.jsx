@@ -77,7 +77,7 @@ const MessageForm = () => {
       from_name: formData.name,
       from_email: formData.email,
       message: formData.message,
-      to_name: "Liderm Cosmétique"
+      to_name: "Cura Slim"
     };
 
     send(
@@ -117,8 +117,8 @@ const MessageForm = () => {
   const renderStatusMessage = () => {
     if (!status.message) return null;
     return (
-      <div className={`status-message ${status.type}`}>
-        <div className="status-icon">
+      <div className={`messageform-status-message ${status.type}`}>
+        <div className="messageform-status-icon">
           {status.type === 'success' ? '✓' : '⚠'}
         </div>
         <p>{status.message}</p>
@@ -127,15 +127,15 @@ const MessageForm = () => {
   };
 
   return (
-    <div className="contact-container">
-      <h1 className="contact-title">Contactez <span>Nous</span></h1>
+    <div className="messageform-contact-container">
+      <h1 className="messageform-contact-title">Contactez <span>Nous</span></h1>
       
       {/* Status Message */}
       {renderStatusMessage()}
       
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <div className="input-group">
+      <form className="messageform-contact-form" onSubmit={handleSubmit}>
+        <div className="messageform-form-group">
+          <div className="messageform-input-group">
             <label htmlFor="name">Nom complet</label>
             <input 
               type="text" 
@@ -149,7 +149,7 @@ const MessageForm = () => {
             />
           </div>
           
-          <div className="input-group">
+          <div className="messageform-input-group">
             <label htmlFor="email">Adresse e-mail</label>
             <input 
               type="email" 
@@ -164,8 +164,8 @@ const MessageForm = () => {
           </div>
         </div>
 
-        <div className="form-group single-input">
-          <div className="input-group">
+        <div className="messageform-form-group messageform-single-input">
+          <div className="messageform-input-group">
             <label htmlFor="message">Message</label>
             <textarea 
               id="message" 
@@ -182,19 +182,19 @@ const MessageForm = () => {
 
         <button 
           type="submit" 
-          className={`submit-button ${isSubmitting ? 'loading' : ''}`}
+          className={`messageform-submit-button ${isSubmitting ? 'loading' : ''}`}
           disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
-              <span className="spinner"></span>
+              <span className="messageform-spinner"></span>
               Envoi en cours...
             </>
           ) : 'Envoyer le message'}
         </button>
       </form>
 
-      <div className="contact-info">
+      <div className="messageform-contact-info">
         <p><span>Email:</span> contact@curaslim.com</p>
         <p><span>Téléphone:</span> +212 6 12 34 56 78</p>
       </div>
