@@ -1,5 +1,5 @@
 .landing-main {
-overflow: hidden;
+  overflow: hidden;
   flex: 1;
 }
 
@@ -12,11 +12,11 @@ overflow: hidden;
   margin-bottom: 12px;
 }
 
-
+/* parent sections: faster duration */
 .section {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
 }
 
 .section.visible {
@@ -24,65 +24,40 @@ overflow: hidden;
   transform: translateY(0);
 }
 
-/* Slower staggered delays for parent sections */
-.section:nth-child(1) {
-  transition-delay: 0.2s;
-}
-.section:nth-child(2) {
-  transition-delay: 0.4s;
-}
-.section:nth-child(3) {
-  transition-delay: 0.6s;
-}
-.section:nth-child(4) {
-  transition-delay: 0.8s;
-}
-.section:nth-child(5) {
-  transition-delay: 1.0s;
-}
-.section:nth-child(6) {
-  transition-delay: 1.2s;
-}
-.section:nth-child(7) {
-  transition-delay: 1.4s;
-}
-.section:nth-child(8) {
-  transition-delay: 1.6s;
-}
+/* Faster, tighter staggered delays for parent sections */
+.section:nth-child(1) { transition-delay: 0.05s; }
+.section:nth-child(2) { transition-delay: 0.10s; }
+.section:nth-child(3) { transition-delay: 0.15s; }
+.section:nth-child(4) { transition-delay: 0.20s; }
+.section:nth-child(5) { transition-delay: 0.25s; }
+.section:nth-child(6) { transition-delay: 0.30s; }
+.section:nth-child(7) { transition-delay: 0.35s; }
+.section:nth-child(8) { transition-delay: 0.40s; }
 
-/* Generic rule for child components with animations */
+/* child components */
 .section:not(.visible) .animated-child {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(18px);
   animation: none !important;
   transition: none !important;
 }
 
+/* faster child animation */
 .section.visible .animated-child {
-  animation: fadeInUp 1.2s ease-out forwards;
+  animation: fadeInUp 0.35s ease-out forwards;
 }
 
-/* Staggered delays for child elements */
-.section.visible .animated-child:nth-child(1) {
-  animation-delay: 0.2s;
-}
-.section.visible .animated-child:nth-child(2) {
-  animation-delay: 0.4s;
-}
-.section.visible .animated-child:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.section.visible .animated-child:nth-child(4) {
-  animation-delay: 0.8s;
-}
-.section.visible .animated-child:nth-child(5) {
-  animation-delay: 1s;
-}
+/* tighter staggered delays for child elements */
+.section.visible .animated-child:nth-child(1) { animation-delay: 0.05s; }
+.section.visible .animated-child:nth-child(2) { animation-delay: 0.10s; }
+.section.visible .animated-child:nth-child(3) { animation-delay: 0.15s; }
+.section.visible .animated-child:nth-child(4) { animation-delay: 0.20s; }
+.section.visible .animated-child:nth-child(5) { animation-delay: 0.25s; }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;

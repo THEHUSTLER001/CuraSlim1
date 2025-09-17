@@ -89,7 +89,7 @@ background: #a50e99;
 .hero__actions {
   display: flex;
   gap: 20px;
-  margin-top: 8px;
+  margin-top: 75px;
 }
 
 .btn1 {
@@ -127,7 +127,7 @@ border: 3px solid purple;
     min-height: 420px;
   }
   .hero__title {
-    font-size: 36px;
+    font-size: 50px;
   }
 }
 
@@ -137,7 +137,7 @@ border: 3px solid purple;
     min-height: 360px;
   }
   .hero__title {
-    font-size: 28px;
+    font-size: 50px;
   }
   .btn1 {
     padding: 10px 14px;

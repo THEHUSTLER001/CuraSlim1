@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from '../../components/Header/Header.jsx';
 import Hero from '../../components/Hero/Hero.jsx';
-import Showcase from '../../components/Showcase/Showcase.jsx';
 import Posters from '../../components/Posters/Posters.jsx';
 import ProductList from '../../components/ProductList/ProductList.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
@@ -47,20 +46,17 @@ export default function LandingPage() {
     <>
       <Header />
       <main className="landing-main">
-        <div className="section">
-          <Hero />
-        </div>
         <div id="home" className="section">
-          <Showcase />
-        </div>
-        <div className="section">
-          <Posters />
+          <Hero />
         </div>
          <div id="about" className="section">
           <About/>
         </div>
         <div className="section">
           <DefSection/>
+        </div>
+          <div className="section">
+          <Posters />
         </div>
         <div id="list" className="section">
           <ProductList />

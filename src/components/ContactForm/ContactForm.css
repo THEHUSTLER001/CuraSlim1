@@ -258,51 +258,59 @@
 .section:not(.visible) .submit-btn {
   transform: translateY(-18px);
 }
+/* Longer, more pronounced synchronized animations */
 
 .section.visible .product-section {
-  animation: slideFromLeft 1.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 2.2s;
+  animation: slideFromLeft 0.90s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 0.50s;
 }
 
 .section.visible .form-section {
-  animation: slideFromRight 1.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 2.4s;
+  animation: slideFromRight 0.90s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 0.70s;
 }
 
 .section.visible .product-image .image-cover {
-  animation: slideOutLeft 1.2s cubic-bezier(.22,.9,.3,1) forwards;
-  animation-delay: 2.6s;
+  animation: slideOutLeft 0.90s cubic-bezier(.22,.9,.3,1) forwards;
+  animation-delay: 0.90s;
 }
 
+/* image scale starts slightly after the product-section begins, but before cover finishes */
 .section.visible .product-image img {
-  animation: scaleIn 1.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 0.8s;
+  animation: scaleIn 0.70s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 0.60s;
 }
 
 .section.visible .form-section h2 {
-  animation: dropIn 1.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 0.6s;
+  animation: dropIn 0.70s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 0.60s;
 }
 
 .section.visible .quantity-section {
-  animation: dropIn 1.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 0.8s;
+  animation: dropIn 0.70s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 0.80s;
 }
 
-.section.visible .input-group:nth-child(1) {
-  animation: dropIn 3.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 2.0s;
+/* support both .input-group and .input-groupp (typo-safe) */
+/* inputs come after headings and quantity controls with a clear offset */
+.section.visible .input-group:nth-child(1),
+.section.visible .input-groupp:nth-child(1) {
+  animation: dropIn 0.70s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 1.00s;
 }
 
-.section.visible .input-group:nth-child(2) {
-  animation: dropIn 3.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 2.2s;
+.section.visible .input-group:nth-child(2),
+.section.visible .input-groupp:nth-child(2) {
+  animation: dropIn 0.70s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 1.15s;
 }
 
+/* submit button waits until inputs are settled */
 .section.visible .submit-btn {
-  animation: dropIn 3.2s cubic-bezier(.2,.9,.2,1) forwards;
-  animation-delay: 2.4s;
+  animation: dropIn 0.80s cubic-bezier(.2,.9,.2,1) forwards;
+  animation-delay: 1.30s;
 }
+
 
 /* Keyframes */
 @keyframes slideFromLeft {
