@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Header from '../../components/Header/Header.jsx';
 import Hero from '../../components/Hero/Hero.jsx';
 import Posters from '../../components/Posters/Posters.jsx';
-import ProductList from '../../components/ProductList/ProductList.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import TestimonialCarousel from '../../components/Testimonial/Testimonial.jsx';
 import ContactForm from '../../components/ContactForm/ContactForm.jsx';
@@ -55,11 +54,8 @@ export default function LandingPage() {
         <div className="section">
           <DefSection/>
         </div>
-          <div className="section">
+          <div id="list"  className="section">
           <Posters />
-        </div>
-        <div id="list" className="section">
-          <ProductList />
         </div>
         <div className="section">
           <FloatingImageR/>
