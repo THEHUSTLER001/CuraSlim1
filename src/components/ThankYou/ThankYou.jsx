@@ -6,7 +6,7 @@ const ThankYou = () => {
     <div className="thank-you-container">
       <p>
 Merci pour votre achat !Nous allons vous contacter bientôt pour confirmer votre commande 
-شكرا على الطلب ديالك !غادي نتواصلو معاك قريبا باش نأكدوا الطلب ديالك       </p>
+شكرا على الطلب ديالك !غادي نتواصلو معاك قريبا باش نأكدوا الطلب ديالك   </p>
     </div>
   );
 };
