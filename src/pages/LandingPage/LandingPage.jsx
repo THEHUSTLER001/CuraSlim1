@@ -10,7 +10,6 @@ import ProductBenefit from '../../components/ProductBenefit/ProductBenefit.jsx';
 import './LandingPage.css';
 import WeightCalculator from '../../components/WeightCalculator/WeightCalculator.jsx';
 import FloatingImageR from '../../components/Floatingimages/FloatingImageR.jsx';
-import FloatingImageL from '../../components/Floatingimages/FloatingImageL.jsx';
 import FixedBuyButton from '../../components/FixedButton/FixedButton.jsx';
 import MessageForm from '../../components/MessageForm/MessageForm.jsx';
 import DefSection from '../../components/DefSection/DefSection.jsx';
@@ -56,7 +55,6 @@ export default function LandingPage() {
           <DefSection/>
         </div>
           <div id="list"  className="section">
-          <FloatingImageL/>
           <Posters />
         </div>
         <div className="section">
