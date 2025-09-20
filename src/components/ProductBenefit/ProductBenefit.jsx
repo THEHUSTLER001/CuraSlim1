@@ -3,39 +3,62 @@ import './ProductBenefit.css';
 
 const ProductBenefit = () => {
   const products = [
-    {
-      id: 1,
-      icon: "🌟",
-      title: "Un Coupe Faim à effet spectaculaire !",
-      titleAr: "مثبط للشهية بتأثير مذهل",
-      description: "À base de GOMME ADRAGANTE, il absorbe l'eau et forme un gel visqueux dans l'estomac. Cela ralentit la digestion et crée une sensation de satiété prolongée, aidant ainsi à réduire l'appétit et les fringales.",
-      descriptionAr: "يحتوي على صمغ التراغاكانث الذي يمتص الماء ويشكل هلاماً في المعدة"
-    },
-    {
-      id: 2,
-      icon: "🔥",
-      title: "Un Brûleur de Graisses Polyvalent !",
-      titleAr: "حارق دهون متعدد الاستخدامات",
-      description: "Grace à sa triple action, il favorise l'élimination et limite le stockage des graisses, tout en augmentant le métabolisme de votre organisme, avec un effet detoxifiant naturel qui accélère le processus de perte de poids.",
-      descriptionAr: "بفضل فعاليته الثلاثية، يساعد على حرق الدهون وزيادة معدل الأيض"
-    },
-    {
-      id: 3,
-      icon: "✨",
-      title: "Une Crème Amincissante Dessinatrice !",
-      titleAr: "كريم نحت القوام",
-      description: "Grace à ses composants naturels, elle réduit visiblement la cellulite, et assure une peau plus ferme et plus lisse, dessinant ainsi votre silhouette aux règles de l'art !",
-      descriptionAr: "بفضل مكوناته الطبيعية، يقلل من السيلوليت ويشد البشرة"
-    },
-    {
-      id: 4,
-      icon: "💧",
-      title: "Une huile anti chute de cheveux OFFERTE !",
-      titleAr: "زيت مكافحة تساقط الشعر مجاناً",
-      description: "Formule spéciale pour renforcer les cheveux et prévenir leur chute, offrant brillance et vitalité à votre chevelure.",
-      descriptionAr: "تركيبة خاصة لتقوية الشعر ومنع تساقطه مع إضافة البريق والحيوية"
-    }
-  ];
+  {
+    id: 1,
+    icon: "🌟",
+    title: "Un Coupe Faim à effet spectaculaire !",
+    titleAr: "مثبط للشهية بتأثير مذهل",
+    description:
+      "À base de GOMME ADRAGANTE, il absorbe l'eau et forme un gel visqueux dans l'estomac. Cela ralentit la digestion et crée une sensation de satiété prolongée, aidant ainsi à réduire l'appétit et les fringales.",
+    descriptionAr: "يحتوي على صمغ التراغاكانث الذي يمتص الماء ويشكل هلاماً في المعدة",
+  },
+  {
+    id: 2,
+    icon: "🔥",
+    title: "Un Brûleur de Graisses Polyvalent !",
+    titleAr: "حارق دهون متعدد الاستخدامات",
+    description:
+      "Grace à sa triple action, il favorise l'élimination et limite le stockage des graisses, tout en augmentant le métabolisme de votre organisme, avec un effet detoxifiant naturel qui accélère le processus de perte de poids.",
+    descriptionAr: "بفضل فعاليته الثلاثية، يساعد على حرق الدهون وزيادة معدل الأيض",
+  },
+  {
+    id: 3,
+    icon: "✨",
+    title: "Une Crème Amincissante Dessinatrice !",
+    titleAr: "كريم نحت القوام",
+    description:
+      "Grace à ses composants naturels, elle réduit visiblement la cellulite, et assure une peau plus ferme et plus lisse, dessinant ainsi votre silhouette aux règles de l'art !",
+    descriptionAr: "بفضل مكوناته الطبيعية، يقلل من السيلوليت ويشد البشرة",
+  },
+  {
+    id: 4,
+    icon: "💧",
+    title: "Une huile anti chute de cheveux OFFERTE !",
+    titleAr: "زيت مكافحة تساقط الشعر مجاناً",
+    description:
+      "Formule spéciale pour renforcer les cheveux et prévenir leur chute, offrant brillance et vitalité à votre chevelure.",
+    descriptionAr: "تركيبة خاصة لتقوية الشعر ومنع تساقطه مع إضافة البريق والحيوية",
+  },
+  {
+    id: 5,
+    icon: "🍵",
+    title: "Une Tisane Détox Naturelle !",
+    titleAr: "شاي أعشاب طبيعي للتنحيف",
+    description:
+      "Un mélange unique de plantes qui favorise l’élimination des toxines, aide à la digestion et soutient le métabolisme pour une perte de poids saine.",
+    descriptionAr: "مزيج فريد من الأعشاب يساعد على التخلص من السموم ودعم الهضم",
+  },
+  {
+    id: 6,
+    icon: "💊",
+    title: "Des Compléments Vitaminés Énergétiques !",
+    titleAr: "مكملات فيتامينات للطاقة",
+    description:
+      "Enrichis en vitamines essentielles, ils renforcent l’énergie, réduisent la fatigue et soutiennent votre parcours minceur en gardant votre corps actif et en bonne santé.",
+    descriptionAr: "مدعمة بالفيتامينات الأساسية لتعزيز الطاقة وتقليل التعب",
+  },
+];
+
 
   return (
     <div className="benefit-container">

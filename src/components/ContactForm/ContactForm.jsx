@@ -58,7 +58,7 @@ const ContactForm = () => {
         const json = await res.json();
         if (mounted && json.packPrice != null) setPackPrice(Number(json.packPrice));
       } catch (err) {
-        if (mounted && packPrice == null) setPackPrice(179.89);
+        if (mounted && packPrice == null) setPackPrice(400.00);
       }
     })();
     return () => { mounted = false; };

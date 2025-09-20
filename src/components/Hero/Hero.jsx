@@ -31,21 +31,21 @@ export default function Hero() {
   };
   // Price data
   const prices = [
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-     { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-     { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-     { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' },
-    { old: '268,50 DH', new: '179.89 DH' }
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+     { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+     { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+     { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' },
+    { old: '600,00 DH', new: '400,00 DH' }
   ];
 
   return (

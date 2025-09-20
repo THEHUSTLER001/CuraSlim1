@@ -54,8 +54,8 @@ export default function About() {
 
             <div className="price-wrap animate-fade-in delay">
               <div>
-                <span className="original">320,00</span>
-                <span className="discount">189.99 DH</span>
+                <span className="original">600,00</span>
+                <span className="discount">400,00 DH</span>
               </div>
               <div className="cta-note">Profitez de cette offre exceptionnelle dès maintenant !</div>
             </div>
