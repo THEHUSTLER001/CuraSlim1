@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Phone, MapPin } from "lucide-react";
-import productImg from "../../assets/images/BannerDes.jpg";
+import productImg from "../../assets/images/Bannnerform.JPG";
 import './ContactForm.css';
 
 const ContactForm = () => {

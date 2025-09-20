@@ -182,3 +182,33 @@
     height: 200px;
   }
 }
+
+
+/* Add to the end of your Categories.css (or anywhere after existing rules) */
+
+/* make the category-label act like a button without changing visuals */
+.category-label {
+  border: none;          /* button reset */
+  padding: 10px;         /* keep the same spacing you had */
+  background: inherit;   /* allow your existing bg rules to work */
+  font: inherit;
+  cursor: pointer;       /* indicate clickable */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%
+}
+
+/* accessible focus ring (keeps visual look but helps keyboard users) */
+.category-label:focus {
+  outline: 3px solid rgba(160, 32, 240, 0.25); /* subtle purple ring */
+  outline-offset: 2px;
+}
+
+/* remove default focus outline in browsers that show it */
+.category-label::-moz-focus-inner {
+  border: 0;
+}
+

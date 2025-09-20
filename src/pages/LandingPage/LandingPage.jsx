@@ -14,6 +14,7 @@ import FixedBuyButton from '../../components/FixedButton/FixedButton.jsx';
 import MessageForm from '../../components/MessageForm/MessageForm.jsx';
 import DefSection from '../../components/DefSection/DefSection.jsx';
 import About from '../../components/About/About.jsx';
+import LegalImage from '../../components/LegalImage/LegalImage.jsx';
 
 export default function LandingPage() {
   useEffect(() => {
@@ -69,6 +70,7 @@ export default function LandingPage() {
         </div>
          <div id="weight" className="section">
            <WeightCalculator/>
+           <LegalImage/>
         </div>
         <div className="section">
           <Categories />

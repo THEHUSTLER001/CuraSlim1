@@ -1,0 +1,12 @@
+.legal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.legal-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
