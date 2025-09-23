@@ -10,7 +10,8 @@ const ProductBenefit = () => {
     titleAr: "مثبط للشهية بتأثير مذهل",
     description:
       "À base de GOMME ADRAGANTE, il absorbe l'eau et forme un gel visqueux dans l'estomac. Cela ralentit la digestion et crée une sensation de satiété prolongée, aidant ainsi à réduire l'appétit et les fringales.",
-    descriptionAr: "يحتوي على صمغ التراغاكانث الذي يمتص الماء ويشكل هلاماً في المعدة",
+    descriptionAr:
+      "يحتوي على صمغ التراغاكانث الذي يمتص الماء ويشكل هلاماً في المعدة",
   },
   {
     id: 2,
@@ -57,7 +58,28 @@ const ProductBenefit = () => {
       "Enrichis en vitamines essentielles, ils renforcent l’énergie, réduisent la fatigue et soutiennent votre parcours minceur en gardant votre corps actif et en bonne santé.",
     descriptionAr: "مدعمة بالفيتامينات الأساسية لتعزيز الطاقة وتقليل التعب",
   },
+  {
+    id: 7,
+    icon: "🥗",
+    title: "Un Pack Nutritionnel Équilibré !",
+    titleAr: "حزمة غذائية متوازنة",
+    description:
+      "Une combinaison d’aliments et de compléments choisis pour offrir un apport nutritif complet, favorisant un mode de vie sain et un meilleur contrôle du poids.",
+    descriptionAr:
+      "مجموعة من الأغذية والمكملات المختارة لتوفير تغذية متكاملة ودعم أسلوب حياة صحي",
+  },
+  {
+    id: 8,
+    icon: "🛌",
+    title: "Un Thé Relaxant pour un Sommeil Réparateur !",
+    titleAr: "شاي مهدئ لنوم عميق",
+    description:
+      "Un mélange apaisant d’herbes naturelles qui réduit le stress, améliore la qualité du sommeil et soutient indirectement la régulation du poids.",
+    descriptionAr:
+      "مزيج مهدئ من الأعشاب الطبيعية يقلل التوتر ويحسن جودة النوم ويدعم تنظيم الوزن",
+  },
 ];
+
 
 
   return (
