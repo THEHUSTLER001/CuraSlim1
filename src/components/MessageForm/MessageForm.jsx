@@ -1,75 +1,58 @@
+// src/components/MessageForm.jsx
 import React, { useState, useEffect } from 'react';
 import { init, send } from '@emailjs/browser';
 import './MessageForm.css';
 
-// Initialize EmailJS with public key from environment variables
-init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
+// ONLY use environment variables — no hardcoded fallbacks
+const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const MessageForm = () => {
-  // Form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  
-  // Form status
-  const [status, setStatus] = useState({
-    type: '', // 'success', 'error', or ''
-    message: ''
-  });
-  
-  // Submitting state
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // Verify environment variables once (log errors but don't block form)
   useEffect(() => {
-    if (!process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 
-        !process.env.REACT_APP_EMAILJS_SERVICE_ID || 
-        !process.env.REACT_APP_EMAILJS_TEMPLATE_ID) {
-      console.error('⚠️ EmailJS configuration error: Missing environment variables');
+    if (PUBLIC_KEY) {
+      init(PUBLIC_KEY);
+    } else {
+      console.warn('EmailJS public key (REACT_APP_EMAILJS_PUBLIC_KEY) is not set.');
+    }
+
+    if (!SERVICE_ID || !TEMPLATE_ID) {
+      console.error('⚠️ EmailJS configuration error: set REACT_APP_EMAILJS_SERVICE_ID and REACT_APP_EMAILJS_TEMPLATE_ID in your .env');
     }
   }, []);
 
-  // Handle input changes
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
-    // Clear status when typing
-    if (status.message) {
-      setStatus({ type: '', message: '' });
-    }
+    if (status.message) setStatus({ type: '', message: '' });
   };
 
-  // Validate form
   const validateForm = () => {
     if (!formData.name.trim()) {
       setStatus({ type: 'error', message: 'Le nom est requis' });
       return false;
     }
-    
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim() || !emailRegex.test(formData.email)) {
       setStatus({ type: 'error', message: "L'adresse e-mail n'est pas valide" });
       return false;
     }
-    
     if (!formData.message.trim()) {
       setStatus({ type: 'error', message: 'Le message est requis' });
       return false;
     }
-    
     return true;
   };
 
-  // Handle submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
     if (isSubmitting) return;
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
     setStatus({ type: '', message: '' });
 
@@ -77,48 +60,43 @@ const MessageForm = () => {
       from_name: formData.name,
       from_email: formData.email,
       message: formData.message,
-      to_name: "Cura Slim"
+      to_name: 'Cura Slim'
     };
 
-    send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      templateParams
-    )
-      .then(() => {
-        setIsSubmitting(false);
-        setStatus({ 
-          type: 'success', 
-          message: 'Votre message a été envoyé avec succès ! Nous vous contacterons dans les plus brefs délais.'
-        });
-        setFormData({ name: '', email: '', message: '' });
+    try {
+      // pass PUBLIC_KEY as 4th arg if present, otherwise call without it
+      if (PUBLIC_KEY) {
+        await send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      } else {
+        await send(SERVICE_ID, TEMPLATE_ID, templateParams);
+      }
 
-        // Clear success after 5s
-        setTimeout(() => {
-          setStatus({ type: '', message: '' });
-        }, 5000);
-      })
-      .catch((error) => {
-        console.error('EmailJS error:', error);
-        setIsSubmitting(false);
-
-        let errorMessage = "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.";
-        if (error.text?.includes('domain')) {
-          errorMessage = "Erreur de domaine. Veuillez contacter l'administrateur du site.";
-        } else if (error.status === 429) {
-          errorMessage = "Trop de tentatives. Veuillez réessayer plus tard.";
-        }
-
-        setStatus({ type: 'error', message: errorMessage });
+      setIsSubmitting(false);
+      setStatus({
+        type: 'success',
+        message: 'Votre message a été envoyé avec succès ! Nous vous contacterons dans les plus brefs délais.'
       });
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setStatus({ type: '', message: '' }), 5000);
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setIsSubmitting(false);
+
+      let errorMessage = "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.";
+      if (error?.text?.toLowerCase()?.includes('domain')) {
+        errorMessage = "Erreur de domaine. Veuillez contacter l'administrateur du site.";
+      } else if (error?.status === 429) {
+        errorMessage = "Trop de tentatives. Veuillez réessayer plus tard.";
+      }
+      setStatus({ type: 'error', message: errorMessage });
+    }
   };
 
-  // Render status message
   const renderStatusMessage = () => {
     if (!status.message) return null;
     return (
-      <div className={`messageform-status-message ${status.type}`}>
-        <div className="messageform-status-icon">
+      <div className={`messageform-status-message ${status.type}`} role="status" aria-live="polite">
+        <div className="messageform-status-icon" aria-hidden>
           {status.type === 'success' ? '✓' : '⚠'}
         </div>
         <p>{status.message}</p>
@@ -129,37 +107,38 @@ const MessageForm = () => {
   return (
     <div className="messageform-contact-container">
       <h1 className="messageform-contact-title">Contactez <span>Nous</span></h1>
-      
-      {/* Status Message */}
+
       {renderStatusMessage()}
-      
-      <form className="messageform-contact-form" onSubmit={handleSubmit}>
+
+      <form className="messageform-contact-form" onSubmit={handleSubmit} noValidate>
         <div className="messageform-form-group">
           <div className="messageform-input-group">
             <label htmlFor="name">Nom complet</label>
-            <input 
-              type="text" 
-              id="name" 
+            <input
+              type="text"
+              id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Entrez votre nom" 
+              placeholder="Entrez votre nom"
               disabled={isSubmitting}
               required
+              aria-required="true"
             />
           </div>
-          
+
           <div className="messageform-input-group">
             <label htmlFor="email">Adresse e-mail</label>
-            <input 
-              type="email" 
-              id="email" 
+            <input
+              type="email"
+              id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Entrez votre e-mail" 
+              placeholder="Entrez votre e-mail"
               disabled={isSubmitting}
               required
+              aria-required="true"
             />
           </div>
         </div>
@@ -167,27 +146,29 @@ const MessageForm = () => {
         <div className="messageform-form-group messageform-single-input">
           <div className="messageform-input-group">
             <label htmlFor="message">Message</label>
-            <textarea 
-              id="message" 
+            <textarea
+              id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              rows="4" 
-              placeholder="Entrez votre message" 
+              rows="4"
+              placeholder="Entrez votre message"
               disabled={isSubmitting}
               required
-            ></textarea>
+              aria-required="true"
+            />
           </div>
         </div>
 
-        <button 
-          type="submit" 
+        <button
+          type="submit"
           className={`messageform-submit-button ${isSubmitting ? 'loading' : ''}`}
           disabled={isSubmitting}
+          aria-disabled={isSubmitting}
         >
           {isSubmitting ? (
             <>
-              <span className="messageform-spinner"></span>
+              <span className="messageform-spinner" aria-hidden></span>
               Envoi en cours...
             </>
           ) : 'Envoyer le message'}
