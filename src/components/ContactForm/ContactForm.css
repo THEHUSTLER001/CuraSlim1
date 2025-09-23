@@ -299,6 +299,10 @@
   animation-delay: 1.00s;
 }
 
+#mobile-banner{
+  display: none;
+}
+
 .section.visible .input-group:nth-child(2),
 .section.visible .input-groupp:nth-child(2) {
   animation: dropIn 0.70s cubic-bezier(.2,.9,.2,1) forwards;
@@ -389,6 +393,12 @@
 }
 
 @media (max-width: 480px) {
+  #desktop-banner{
+    display: none;
+  }
+  #mobile-banner{
+    display: block;
+  }
   .form-container {
     padding: 18px;
     border-radius: 10px;

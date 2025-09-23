@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { User, Phone, MapPin } from "lucide-react";
 import productImg from "../../assets/images/Bannnerform.JPG";
+import productImgmobile from "../../assets/images/mobilebannerform.jpg"
 import './ContactForm.css';
 
 const ContactForm = () => {
@@ -132,7 +133,9 @@ const ContactForm = () => {
       <div className="product-section" style={{ ['--i']: 0 }}>
         <div className="product-image-wrap">
           <div className="product-image">
-            <img src={productImg} alt="Crème Solaire" />
+            <img src={productImg} id='desktop-banner' alt="Crème Solaire" />
+            <img src={productImgmobile}  id='mobile-banner' alt="Crème Solaire" />
+
             <div className="image-cover" />
           </div>
         </div>
