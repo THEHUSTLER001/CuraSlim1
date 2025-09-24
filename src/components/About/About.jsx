@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import productImg from "../../assets/images/Cat3.jpg"; // <- adjust path to your asset
+import productImg from "../../assets/images/Bannnerform.JPG"; // <- adjust path to your asset
 
 export default function About() {
   return (
