@@ -232,3 +232,66 @@
 .section.visible .animated-child {
   animation: fadeInUp 1.2s ease-out forwards;
 }
+
+/* Simple responsive image banner (rounded, shadowed) */
+.calculator-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0.75rem auto 1.25rem; /* spacing between title and weight-container */
+  padding: 0 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator-banner-img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 14px 46px rgba(20, 0, 40, 0.08);
+  border: 1px solid rgba(165, 14, 153, 0.06);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* subtle hover lift on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .calculator-banner-img:hover {
+    transform: translateY(-6px) scale(1.005);
+    box-shadow: 0 22px 60px rgba(20, 0, 40, 0.12);
+  }
+}
+
+/* Tablet: keep banner a bit tighter */
+@media (max-width: 992px) {
+  .calculator-banner {
+    padding: 0 0.8rem;
+  }
+  .calculator-banner-img {
+    max-width: 920px;
+    border-radius: 14px;
+  }
+}
+
+/* Mobile: smaller radius and padding, keep aspect */
+@media (max-width: 768px) {
+  .calculator-banner {
+    padding: 0 0.6rem;
+    margin: 0.6rem auto 1rem;
+  }
+  .calculator-banner-img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 12px 34px rgba(20, 0, 40, 0.08);
+  }
+}
+
+/* Very small phones: compact */
+@media (max-width: 480px) {
+  .calculator-banner-img {
+    border-radius: 10px;
+  }
+}

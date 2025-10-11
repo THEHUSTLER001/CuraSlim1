@@ -27,44 +27,51 @@ function WeightCalculator() {
       <h2 id="calculator-title">Calculateur de Poids</h2>
 
       <div className="weight-container">
-      <div id="calculator-image">
-    <img src={require('../../assets/images/poids.png')} alt="Balance" />
-  </div>
-      <div id="calculator-content">
-        <div id="input-section" className="animated-child">
-          <div id="input-group" className="animated-child">
-            <label>Poids (kg) :</label>
-            <input
-              type="number"
-              value={weight}
-              onChange={(e) => setWeight(e.target.value)}
-              placeholder="Entrer le poids"
-            />
-          </div>
-          <div id="input-group" className="animated-child">
-            <label>Taille (cm) :</label>
-            <input
-              type="number"
-              value={height}
-              onChange={(e) => setHeight(e.target.value)}
-              placeholder="Entrer la taille"
-            />
-          </div>
-          <button id="calculator-btn" className="animated-child" onClick={handleCalculate}>
-            Calculer IMC et Poids Idéal
-          </button>
+        <div id="calculator-image">
+          <img src={require('../../assets/images/poids.png')} alt="Balance" />
         </div>
-        <div id="result-section" className="animated-child">
-          <div id="result-card">
-            <div id="result" className="animated-child">
-              IMC : {bmi}
+        <div id="calculator-content">
+          <div id="input-section" className="animated-child">
+            <div id="input-group" className="animated-child">
+              <label>Poids (kg) :</label>
+              <input
+                type="number"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+                placeholder="Entrer le poids"
+              />
             </div>
-            <div id="result" className="animated-child">
-              Poids Idéal : {idealWeight}
+            <div id="input-group" className="animated-child">
+              <label>Taille (cm) :</label>
+              <input
+                type="number"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+                placeholder="Entrer la taille"
+              />
+            </div>
+            <button id="calculator-btn" className="animated-child" onClick={handleCalculate}>
+              Calculer IMC et Poids Idéal
+            </button>
+          </div>
+          <div id="result-section" className="animated-child">
+            <div id="result-card">
+              <div id="result" className="animated-child">
+                IMC : {bmi}
+              </div>
+              <div id="result" className="animated-child">
+                Poids Idéal : {idealWeight}
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div className="calculator-banner">
+        <img
+          className="calculator-banner-img"
+          src={require('../../assets/images/bannerpoids.png')}
+          alt="Bannière - conseils santé"
+        />
       </div>
     </div>
   );
