@@ -39,45 +39,7 @@ const ProductBenefit = () => {
     description:
       "Formule spéciale pour renforcer les cheveux et prévenir leur chute, offrant brillance et vitalité à votre chevelure.",
     descriptionAr: "تركيبة خاصة لتقوية الشعر ومنع تساقطه مع إضافة البريق والحيوية",
-  },
-  {
-    id: 5,
-    icon: "🍵",
-    title: "Une Tisane Détox Naturelle !",
-    titleAr: "شاي أعشاب طبيعي للتنحيف",
-    description:
-      "Un mélange unique de plantes qui favorise l’élimination des toxines, aide à la digestion et soutient le métabolisme pour une perte de poids saine.",
-    descriptionAr: "مزيج فريد من الأعشاب يساعد على التخلص من السموم ودعم الهضم",
-  },
-  {
-    id: 6,
-    icon: "💊",
-    title: "Des Compléments Vitaminés Énergétiques !",
-    titleAr: "مكملات فيتامينات للطاقة",
-    description:
-      "Enrichis en vitamines essentielles, ils renforcent l’énergie, réduisent la fatigue et soutiennent votre parcours minceur en gardant votre corps actif et en bonne santé.",
-    descriptionAr: "مدعمة بالفيتامينات الأساسية لتعزيز الطاقة وتقليل التعب",
-  },
-  {
-    id: 7,
-    icon: "🥗",
-    title: "Un Pack Nutritionnel Équilibré !",
-    titleAr: "حزمة غذائية متوازنة",
-    description:
-      "Une combinaison d’aliments et de compléments choisis pour offrir un apport nutritif complet, favorisant un mode de vie sain et un meilleur contrôle du poids.",
-    descriptionAr:
-      "مجموعة من الأغذية والمكملات المختارة لتوفير تغذية متكاملة ودعم أسلوب حياة صحي",
-  },
-  {
-    id: 8,
-    icon: "🛌",
-    title: "Un Thé Relaxant pour un Sommeil Réparateur !",
-    titleAr: "شاي مهدئ لنوم عميق",
-    description:
-      "Un mélange apaisant d’herbes naturelles qui réduit le stress, améliore la qualité du sommeil et soutient indirectement la régulation du poids.",
-    descriptionAr:
-      "مزيج مهدئ من الأعشاب الطبيعية يقلل التوتر ويحسن جودة النوم ويدعم تنظيم الوزن",
-  },
+  }
 ];
 
 

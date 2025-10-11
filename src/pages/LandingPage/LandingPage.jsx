@@ -5,7 +5,7 @@ import Posters from '../../components/Posters/Posters.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
 import TestimonialCarousel from '../../components/Testimonial/Testimonial.jsx';
 import ContactForm from '../../components/ContactForm/ContactForm.jsx';
-import Categories from '../../components/Categories/Categories.jsx';
+
 import ProductBenefit from '../../components/ProductBenefit/ProductBenefit.jsx';
 import './LandingPage.css';
 import WeightCalculator from '../../components/WeightCalculator/WeightCalculator.jsx';
@@ -71,9 +71,6 @@ export default function LandingPage() {
          <div id="weight" className="section">
            <WeightCalculator/>
            <LegalImage/>
-        </div>
-        <div className="section">
-          <Categories />
         </div>
         <div id="message" className="section">
           <MessageForm/>

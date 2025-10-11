@@ -40,7 +40,7 @@
   display: flex;
   gap: 36px;
   align-items: flex-start;
-  flex-direction: column; /* desktop: image left, content right */
+  flex-direction: column-reverse; /* desktop: image left, content right */
 }
 
 /* Left image card */

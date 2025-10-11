@@ -2,10 +2,10 @@ import React from 'react';
 import './Hero.css';
 
 // Fallback to desktop image if mobile missing
-const heroDesktop = require('../../assets/images/bannerHero.JPG');
+const heroDesktop = require('../../assets/images/bannerhero.png');
 let heroMobile;
 try {
-  heroMobile = require('../../assets/images/bannerHero.JPG');
+  heroMobile = require('../../assets/images/bannerhero.png');
 } catch (e) {
   heroMobile = heroDesktop;
 }

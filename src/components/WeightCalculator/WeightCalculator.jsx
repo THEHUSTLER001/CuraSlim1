@@ -25,6 +25,11 @@ function WeightCalculator() {
   return (
     <div id="calculator-container">
       <h2 id="calculator-title">Calculateur de Poids</h2>
+
+      <div className="weight-container">
+      <div id="calculator-image">
+    <img src={require('../../assets/images/poids.png')} alt="Balance" />
+  </div>
       <div id="calculator-content">
         <div id="input-section" className="animated-child">
           <div id="input-group" className="animated-child">
@@ -59,6 +64,7 @@ function WeightCalculator() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
